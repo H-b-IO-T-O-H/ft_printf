@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/printf_new.dir/ft_printf.c.o CMakeFiles/printf_new.dir/check.c.o CMakeFiles/printf_new.dir/func.c.o  -o printf_new 

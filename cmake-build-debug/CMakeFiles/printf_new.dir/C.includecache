@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vlad/CLionProjects/printf_new/ft_printf.c
+ft_printf.h
+/home/vlad/CLionProjects/printf_new/ft_printf.h
+
+/home/vlad/CLionProjects/printf_new/ft_printf.h
+stdio.h
+-
+stdarg.h
+-
+unistd.h
+-
+
