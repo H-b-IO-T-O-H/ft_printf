@@ -4,6 +4,8 @@
 CMakeFiles/printf_new.dir/check.c.o: ../check.c
 CMakeFiles/printf_new.dir/check.c.o: ../ft_printf.h
 
+CMakeFiles/printf_new.dir/ft_itoa.c.o: ft_itoa.c
+
 CMakeFiles/printf_new.dir/ft_printf.c.o: ../ft_printf.c
 CMakeFiles/printf_new.dir/ft_printf.c.o: ../ft_printf.h
 

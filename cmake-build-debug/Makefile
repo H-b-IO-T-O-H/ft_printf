@@ -150,6 +150,33 @@ check.c.s:
 	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/check.c.s
 .PHONY : check.c.s
 
+ft_itoa.o: ft_itoa.c.o
+
+.PHONY : ft_itoa.o
+
+# target to build an object file
+ft_itoa.c.o:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/ft_itoa.c.o
+.PHONY : ft_itoa.c.o
+
+ft_itoa.i: ft_itoa.c.i
+
+.PHONY : ft_itoa.i
+
+# target to preprocess a source file
+ft_itoa.c.i:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/ft_itoa.c.i
+.PHONY : ft_itoa.c.i
+
+ft_itoa.s: ft_itoa.c.s
+
+.PHONY : ft_itoa.s
+
+# target to generate assembly for a file
+ft_itoa.c.s:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/ft_itoa.c.s
+.PHONY : ft_itoa.c.s
+
 ft_printf.o: ft_printf.c.o
 
 .PHONY : ft_printf.o
@@ -216,6 +243,9 @@ help:
 	@echo "... check.o"
 	@echo "... check.i"
 	@echo "... check.s"
+	@echo "... ft_itoa.o"
+	@echo "... ft_itoa.i"
+	@echo "... ft_itoa.s"
 	@echo "... ft_printf.o"
 	@echo "... ft_printf.i"
 	@echo "... ft_printf.s"

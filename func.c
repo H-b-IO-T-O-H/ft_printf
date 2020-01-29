@@ -1,11 +1,7 @@
 #include "ft_printf.h"
 
-int		pf_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
 
-int		pf_atoi(const char *str, int allow_neg, int *result, size_t *i)
+/*int		pf_atoi(const char *str, int allow_neg, int *result, size_t *i)
 {
 	int nbr;
 	int neg;
@@ -26,4 +22,4 @@ int		pf_atoi(const char *str, int allow_neg, int *result, size_t *i)
 	}
 	*result = (neg ? -nbr : nbr);
 	return (0);
-}
+}*/
