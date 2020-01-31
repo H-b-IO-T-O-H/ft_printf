@@ -12,3 +12,12 @@ CMakeFiles/printf_new.dir/ft_printf.c.o
 CMakeFiles/printf_new.dir/func.c.o
  /home/vlad/CLionProjects/printf_new/ft_printf.h
  /home/vlad/CLionProjects/printf_new/func.c
+CMakeFiles/printf_new.dir/treat_f.c.o
+ /home/vlad/CLionProjects/printf_new/ft_printf.h
+ /home/vlad/CLionProjects/printf_new/treat_f.c
+CMakeFiles/printf_new.dir/treatment.c.o
+ /home/vlad/CLionProjects/printf_new/ft_printf.h
+ /home/vlad/CLionProjects/printf_new/treatment.c
+CMakeFiles/printf_new.dir/write_func.c.o
+ /home/vlad/CLionProjects/printf_new/ft_printf.h
+ /home/vlad/CLionProjects/printf_new/write_func.c

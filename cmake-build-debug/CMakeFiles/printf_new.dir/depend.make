@@ -12,3 +12,12 @@ CMakeFiles/printf_new.dir/ft_printf.c.o: ../ft_printf.h
 CMakeFiles/printf_new.dir/func.c.o: ../ft_printf.h
 CMakeFiles/printf_new.dir/func.c.o: ../func.c
 
+CMakeFiles/printf_new.dir/treat_f.c.o: ../ft_printf.h
+CMakeFiles/printf_new.dir/treat_f.c.o: ../treat_f.c
+
+CMakeFiles/printf_new.dir/treatment.c.o: ../ft_printf.h
+CMakeFiles/printf_new.dir/treatment.c.o: ../treatment.c
+
+CMakeFiles/printf_new.dir/write_func.c.o: ../ft_printf.h
+CMakeFiles/printf_new.dir/write_func.c.o: ../write_func.c
+

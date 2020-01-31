@@ -93,6 +93,15 @@
 		<Unit filename="/home/vlad/CLionProjects/printf_new/func.c">
 			<Option target="printf_new"/>
 		</Unit>
+		<Unit filename="/home/vlad/CLionProjects/printf_new/treat_f.c">
+			<Option target="printf_new"/>
+		</Unit>
+		<Unit filename="/home/vlad/CLionProjects/printf_new/treatment.c">
+			<Option target="printf_new"/>
+		</Unit>
+		<Unit filename="/home/vlad/CLionProjects/printf_new/write_func.c">
+			<Option target="printf_new"/>
+		</Unit>
 		<Unit filename="/home/vlad/CLionProjects/printf_new/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

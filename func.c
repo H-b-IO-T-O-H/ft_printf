@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 
 
-/*int		pf_atoi(const char *str, int allow_neg, int *result, size_t *i)
+int		ft_atoi(const char *str, int allow_neg, int *result, int *i)
 {
 	int nbr;
 	int neg;
@@ -22,4 +22,4 @@
 	}
 	*result = (neg ? -nbr : nbr);
 	return (0);
-}*/
+}

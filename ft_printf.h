@@ -5,6 +5,14 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+# define NONE 0
+# define FLAG_HASH 1
+# define FLAG_ZERO 2
+# define FLAG_MINUS 4
+# define FLAG_PLUS 8
+# define FLAG_SPACE 16
+# define FLAG_APOSTROPHE 32
+
 typedef struct	s_string
 {
 	const char	*str;
@@ -13,7 +21,7 @@ typedef struct	s_string
 
 typedef enum	e_modifier
 {
-	NONE = 0, L = 1, H = 2, J = 3, Z = 4, LL = 5, HH = 6 //условно взяты названия типов с чужого гита
+	NO = 0, L = 1, H = 2, J = 3, Z = 4, LL = 5, HH = 6 //условно взяты названия типов с чужого гита
 }				t_modifier;
 
 typedef struct	s_param
@@ -21,7 +29,7 @@ typedef struct	s_param
 	t_string	str;
 	t_modifier	mode;
 	char 		conversion;
-	char 		flag;
+	char 		flags;
 	int			width;
 	int			precision;
 	int			error;
@@ -35,13 +43,27 @@ typedef struct	s_treat //
 }				t_treat_conv;
 
 
-int		pf_atoi(const char *str, int allow_neg, int *result, size_t *i);
+int		ft_atoi(const char *str, int allow_neg, int *result, int *i);
 int		pf_is_conversion(char c);
 int		pf_is_modifier(char c);
 int		pf_is_flag(char c);
 int		pf_is_precision(char c);
 int		pf_is_valid(char c);
+int		pf_isdigit(int c);
 char	*ft_itoa(int nb);
+void	ft_putchar(char c);
+int		repeat_write(char c, int n);
+int		pf_write(const char *str, int len);
+int		ft_strlen(const char *s);
 
+int treat_conversion(t_param *param, const char *str, int *i);
+int treat_flags(t_param *param, const char *str, int *i);
+int treat_modifier(t_param *param, const char *str, int *i);
+int treat_precision(t_param *param, const char *str, int *i);
+int			treat_width(t_param *param, const char *str, int *i);
+
+int treat_f_number(t_param param, va_list arg);
+int treat_f_char(t_param param, va_list arg);
+int treat_f_string(t_param param, va_list arg);
 
 #endif

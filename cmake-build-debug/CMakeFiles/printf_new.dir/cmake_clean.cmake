@@ -3,6 +3,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/printf_new.dir/ft_itoa.c.o"
   "CMakeFiles/printf_new.dir/ft_printf.c.o"
   "CMakeFiles/printf_new.dir/func.c.o"
+  "CMakeFiles/printf_new.dir/treat_f.c.o"
+  "CMakeFiles/printf_new.dir/treatment.c.o"
+  "CMakeFiles/printf_new.dir/write_func.c.o"
   "printf_new"
   "printf_new.pdb"
 )

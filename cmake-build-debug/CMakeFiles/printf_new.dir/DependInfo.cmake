@@ -8,6 +8,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/vlad/CLionProjects/printf_new/cmake-build-debug/ft_itoa.c" "/home/vlad/CLionProjects/printf_new/cmake-build-debug/CMakeFiles/printf_new.dir/ft_itoa.c.o"
   "/home/vlad/CLionProjects/printf_new/ft_printf.c" "/home/vlad/CLionProjects/printf_new/cmake-build-debug/CMakeFiles/printf_new.dir/ft_printf.c.o"
   "/home/vlad/CLionProjects/printf_new/func.c" "/home/vlad/CLionProjects/printf_new/cmake-build-debug/CMakeFiles/printf_new.dir/func.c.o"
+  "/home/vlad/CLionProjects/printf_new/treat_f.c" "/home/vlad/CLionProjects/printf_new/cmake-build-debug/CMakeFiles/printf_new.dir/treat_f.c.o"
+  "/home/vlad/CLionProjects/printf_new/treatment.c" "/home/vlad/CLionProjects/printf_new/cmake-build-debug/CMakeFiles/printf_new.dir/treatment.c.o"
+  "/home/vlad/CLionProjects/printf_new/write_func.c" "/home/vlad/CLionProjects/printf_new/cmake-build-debug/CMakeFiles/printf_new.dir/write_func.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -1,110 +1,76 @@
 #include "ft_printf.h"
 
-int			pf_write(const char *str, const size_t len)
-{
-	write(1, str, len);
-	return (len);
-}
-
-void ft_putchar(char c)
-{
-	write(1, &c,1);
-}
-
-int ft_strlen(const char *s)
-{
-	int i;
-	
-	i = 0;
-	while (s[i])
-		++i;
-	return (i);
-}
-
-int treat_d(t_param param, va_list arg)
-{
-	int count;
-	char *str;
-	
-	str = ft_itoa(va_arg(arg, int));
-	count = ft_strlen(str);
-	pf_write(str, count);
-	return(count);
-}
-
-
-
 int transform_param_conv(t_param param, va_list arg)//в заивисимости от типа преобразования возвращаем результат нужной отработавшей функции-обработчика
 {
 	int i;
-	static t_treat_conv (treat_array[1]) = {
-			{.conversion = 'd', .treat = treat_d}
+	static t_treat_conv (treat_array[9]) = {
+			{.conversion = 'd', .treat = treat_f_number},
+			{.conversion = 'o', .treat = treat_f_number},
+			{.conversion = 'u', .treat = treat_f_number},
+			{.conversion = 'x', .treat = treat_f_number},
+			{.conversion = 'X', .treat = treat_f_number},
+			{.conversion = 'c', .treat = treat_f_char},
+			{.conversion = 's', .treat = treat_f_string},
+			{.conversion = 'p', .treat = treat_f_number},
+			{.conversion = '%', .treat = treat_f_number},
 	};
 	i = -1;
 	if (param.error)
 		return (0);
-	while (++i < 1)
+	while (++i < 9)
 		if (param.conversion == treat_array[i].conversion)
 			return (treat_array[i].treat(param, arg));
 	return (0);
 }
 
-int begin_conv(va_list arg, const char *str, int *i)//выделяем все флаги и модификаторы после знака %
+int begin_conv(va_list arg, const char *str, int *i, int len)//выделяем все флаги и модификаторы после знака %
 {
-	int j;
+	static int (*treat_func_arr[5])(t_param *param, const char *str, int *i) = {
+			 treat_flags, treat_width, treat_precision,  treat_modifier, treat_conversion};
 	t_param param;
+	int j;
+	int start;
 	
-	j = ++*i;
-	/*
-	По идее здесь нужны несколько функций для выделения:
-	 -флагов:  '#', '0', '-', '+', ' ', '/'' <--(апостроф тоже флаг)
-	 -ширины: добавляет пробелы(нули, если указан 0 перед модификатором) перед ЧИСЛОМ(выравнивание вправо), если длина числа меньше заданной ширины, если же наоборот,
-	          то параметр ширины игнорируется, и число выводится без сдвига.Если перед модификатором ширины стоит '-', то выравнивание влево(результат вывода дополнен справа пробелами)
-	          Причем модификатор отмечает именно символьные позиции, поэтому знак минус отрицательного числа тоже считается позицией.
-	          Надо еще разобраться с $ и со *
-	          подробнее о ширине: http://microsin.net/programming/arm/secrets-of-printf.html
-	 -точности: количество цифр после точки(по умолчанию 6)
-	 -модификатора длины: тип данных входного аргумента( особо не разбирался, но это тот тип, который в va_arg(arg,type) распознается
-	 -и только в конце типа преобразования: d и i - одно и то же (спросил в слаке, сказали, что это наследие scanf для переносимости printf)
-	 про остальное можно почитать в инете, там не сложно. Будем в начале реализовывать указанные  мануле типо diouxXcspf
-	 
-	 для этого целесообрано создать массив функций и прогонять каждый символ, следующий после процента через них. Если окажется, что символ
-	 принадлежит нужной функции, то эта функция обрабатывает вывод, внося правки в param.(здесь указано нужное поле структуры)
-	*/
-	while (str[*i])
-	{
-		if (pf_is_conversion(str[*i]))
-			param.conversion = str[*i];
-		else if (pf_is_flag(str[*i]))
-			param.flag = str[*i];
-		else if (pf_is_modifier(str[*i]))
-			param.mode = str[*i];
-		else if (pf_is_precision(str[*i]))
-			param.precision = str[*i];
-		else
-			break ;
-		++*i;//count++!!
-	}
-	if (param.conversion == 'i')
-		param.conversion = 'd';
+	j = 0;
+	start = *i;
 	param.error = 0;
-	param.str.str = &str[j];
-	param.str.len = *i - j;
+	param.flags = 0;
+	param.precision = 0;
+	param.mode = NONE;
+	param.conversion = 0;
+	param.str.str = str;
+	param.str.len = len;
+	while (j < 5 && *i < start + len)
+	{
+		if (treat_func_arr[j](&param, str, i))
+		{
+			param.error = 1;
+			break;
+		}
+		++j;
+	}
+	param.conversion == 'i' ? param.conversion = 'd' : 0;
+	param.conversion == 'p' ? param.mode = LL : 0;
 	return (transform_param_conv(param, arg));
 }
 
 int format_parser(const char *str, va_list arg)//разделяем выражение на модификаторы и обычные строчки
 {
 	int i;
+	int j;
 	int count;
 	
 	count = 0;
 	i = 0;
+	j = 0;
 	while (str[i])
 	{
 		if (str[i] == '%')
 		{
-			count += begin_conv(arg, str, &i);
+			j = ++i;
+			while (str[i] && pf_is_valid(str[i]))
+				++i;
+			count += begin_conv(arg, str, &j, i - j);
 		}
 		else
 		{
@@ -126,16 +92,33 @@ int ft_printf(const char *format, ...)
 }
 
 int main() {
-	/*int a;
+	int a;
+	char c;
+	c = 'a';
 	int l1, l2;
-	a = 10;
-	l1 = printf("abcdef\n");
-	l2 = ft_printf("abcdef\n");
+	a = -1000000;
+	/*l1 = printf("abcdef%c\n",c);
+	l2 = ft_printf("abcdef%c\n", c);
 	//ft_printf("abcdef%d\n",a);
 	printf("count(printf) = %d\n",l1);
 	printf("count(ft_printf) = %d\n",l2);*/
-	int a = 1012;
-	double b = 12;
-	printf("%-7.0f",b);
+	//ft_printf("aaa%-12c\n", c);
 	return 0;
 }
+
+/*
+По идее здесь нужны несколько функций для выделения:
+ -флагов:  '#', '0', '-', '+', ' ', '/'' <--(апостроф тоже флаг)
+ -ширины: добавляет пробелы(нули, если указан 0 перед модификатором) перед ЧИСЛОМ(выравнивание вправо), если длина числа меньше заданной ширины, если же наоборот,
+		  то параметр ширины игнорируется, и число выводится без сдвига.Если перед модификатором ширины стоит '-', то выравнивание влево(результат вывода дополнен справа пробелами)
+		  Причем модификатор отмечает именно символьные позиции, поэтому знак минус отрицательного числа тоже считается позицией.
+		  Надо еще разобраться с $ и со *
+		  подробнее о ширине: http://microsin.net/programming/arm/secrets-of-printf.html
+ -точности: количество цифр после точки(по умолчанию 6)
+ -модификатора длины: тип данных входного аргумента( особо не разбирался, но это тот тип, который в va_arg(arg,type) распознается
+ -и только в конце типа преобразования: d и i - одно и то же (спросил в слаке, сказали, что это наследие scanf для переносимости printf)
+ про остальное можно почитать в инете, там не сложно. Будем в начале реализовывать указанные  мануле типо diouxXcspf
+ 
+ для этого целесообрано создать массив функций и прогонять каждый символ, следующий после процента через них. Если окажется, что символ
+ принадлежит нужной функции, то эта функция обрабатывает вывод, внося правки в param.(здесь указано нужное поле структуры)
+*/

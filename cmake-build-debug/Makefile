@@ -231,6 +231,87 @@ func.c.s:
 	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/func.c.s
 .PHONY : func.c.s
 
+treat_f.o: treat_f.c.o
+
+.PHONY : treat_f.o
+
+# target to build an object file
+treat_f.c.o:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/treat_f.c.o
+.PHONY : treat_f.c.o
+
+treat_f.i: treat_f.c.i
+
+.PHONY : treat_f.i
+
+# target to preprocess a source file
+treat_f.c.i:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/treat_f.c.i
+.PHONY : treat_f.c.i
+
+treat_f.s: treat_f.c.s
+
+.PHONY : treat_f.s
+
+# target to generate assembly for a file
+treat_f.c.s:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/treat_f.c.s
+.PHONY : treat_f.c.s
+
+treatment.o: treatment.c.o
+
+.PHONY : treatment.o
+
+# target to build an object file
+treatment.c.o:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/treatment.c.o
+.PHONY : treatment.c.o
+
+treatment.i: treatment.c.i
+
+.PHONY : treatment.i
+
+# target to preprocess a source file
+treatment.c.i:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/treatment.c.i
+.PHONY : treatment.c.i
+
+treatment.s: treatment.c.s
+
+.PHONY : treatment.s
+
+# target to generate assembly for a file
+treatment.c.s:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/treatment.c.s
+.PHONY : treatment.c.s
+
+write_func.o: write_func.c.o
+
+.PHONY : write_func.o
+
+# target to build an object file
+write_func.c.o:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/write_func.c.o
+.PHONY : write_func.c.o
+
+write_func.i: write_func.c.i
+
+.PHONY : write_func.i
+
+# target to preprocess a source file
+write_func.c.i:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/write_func.c.i
+.PHONY : write_func.c.i
+
+write_func.s: write_func.c.s
+
+.PHONY : write_func.s
+
+# target to generate assembly for a file
+write_func.c.s:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/write_func.c.s
+.PHONY : write_func.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -252,6 +333,15 @@ help:
 	@echo "... func.o"
 	@echo "... func.i"
 	@echo "... func.s"
+	@echo "... treat_f.o"
+	@echo "... treat_f.i"
+	@echo "... treat_f.s"
+	@echo "... treatment.o"
+	@echo "... treatment.i"
+	@echo "... treatment.s"
+	@echo "... write_func.o"
+	@echo "... write_func.i"
+	@echo "... write_func.s"
 .PHONY : help
 
 
