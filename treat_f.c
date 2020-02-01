@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int treat_f_number(t_param param, va_list arg) //в разработке
+int treat_f_number(t_param param, va_list arg) //в разработке (Ответственный Шуляк М.А.)
 {
 	int count;
 	char *str;
