@@ -32,8 +32,11 @@ int treat_f_string(t_param param, va_list arg)
 	i = -1;
 	str = va_arg(arg, char *);
 	length = ft_strlen(str);
-	if (str == NULL)
-		str = "null";
+	if (!str)
+	{
+		str = "(null)";
+		length = 6;
+	}
 	param.precision == -1 ? param.precision = INT_MAX : 0;
 	param.precision > length ? param.precision = length : 0;
 	if ((param.flags & FLAG_MINUS) == 0 && param.width > param.precision)

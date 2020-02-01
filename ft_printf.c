@@ -68,7 +68,7 @@ int format_parser(const char *str, va_list arg)//разделяем выраже
 		if (str[i] == '%')
 		{
 			j = ++i;
-			while ((str[i] && pf_is_valid(str[i]) && !pf_is_conversion(str[i])) || (str[i] != '%' && pf_is_conversion(str[i])) )
+			while ((str[i] && pf_is_valid(str[i]) && !pf_is_conversion(str[i])) || (str[i] && str[i] != '%' && pf_is_conversion(str[i])) )
 				++i;
 			str[i] == '%' ? ++i : 0;
 			count += begin_conv(arg, str, &j, i - j);
@@ -99,20 +99,23 @@ int main() {
 	c = 'a';
 	int l1, l2;
 	a = -110;
-	char str[] = "asdfafdjhiofaiihafiohshiofdsssssssssssss;;;;;;;hfsaodiohfaihofashihifsadhioafdsio;hioafs";
-	l1 = printf("%100.0s\n, %s\n", str, str);
-	l2 = ft_printf("%100.0s\n, %s\n", str, str);
+	//char str[] = "asdfafdjhiofaiihafiohshiofdsssssssssssss;;;;;;;hfsaodiohfaihofashihifsadhioafdsio;hioafs";
+	char *s = NULL;
+	ft_printf("%10s\n", s);
+	printf("%10s",s);
+	//printf("%s",s);
+	//l1 = printf("%100.0s\n, %s\n", str, str);
+	//l2 = ft_printf("%100.0s\n, %s\n", str, str);
 	//l1 = printf("abcdef%c\n",c);
 	//l2 = ft_printf("abcdef%c\n", c);
 	//ft_printf("abcdef%d\n",a);
-	printf("count(printf) = %d\n",l1);
-	printf("count(ft_printf) = %d\n",l2);
+	//printf("count(printf) = %d\n",l1);
+	//printf("count(ft_printf) = %d\n",l2);
 	//ft_printf("aaa%-12c\n", c);
 	//printf("%10%%%%10.0%%d\n",a);
 	//ft_printf("%%%d\n", a);
 	return 0;
 }
-145145OLGa
 /*
 По идее здесь нужны несколько функций для выделения:
  -флагов:  '#', '0', '-', '+', ' ', '/'' <--(апостроф тоже флаг)

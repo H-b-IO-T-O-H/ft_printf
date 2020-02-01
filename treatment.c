@@ -2,13 +2,11 @@
 
 int treat_conversion(t_param *param, const char *str, int *i)
 {
-	int a;
 	
 	if (pf_is_conversion(str[*i]))
 	{
 		param->conversion = str[*i];
 		(*i)++;
-		a = *i;
 		return (0);
 	}
 	return (1);
