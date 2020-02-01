@@ -26,7 +26,7 @@ int ft_strlen(const char *s)
 	int i;
 	
 	i = 0;
-	while (s[i])
+	while (s[i] && i < INT_MAX)
 		++i;
 	return (i);
 }

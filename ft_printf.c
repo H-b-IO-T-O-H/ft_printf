@@ -12,7 +12,7 @@ int transform_param_conv(t_param param, va_list arg)//в заивисимост�
 			{.conversion = 'c', .treat = treat_f_char},
 			{.conversion = 's', .treat = treat_f_string},
 			{.conversion = 'p', .treat = treat_f_number},
-			{.conversion = '%', .treat = treat_f_number},
+			{.conversion = '%', .treat = treat_f_percent},
 	};
 	i = -1;
 	if (param.error)
@@ -40,7 +40,7 @@ int begin_conv(va_list arg, const char *str, int *i, int len)//выделяем 
 	param.conversion = 0;
 	param.str.str = str;
 	param.str.len = len;
-	while (j < 5 && *i < start + len)
+	while (j < 5 && *i <= start + len)
 	{
 		if (treat_func_arr[j](&param, str, i))
 		{
@@ -68,9 +68,11 @@ int format_parser(const char *str, va_list arg)//разделяем выраже
 		if (str[i] == '%')
 		{
 			j = ++i;
-			while (str[i] && pf_is_valid(str[i]))
+			while ((str[i] && pf_is_valid(str[i]) && !pf_is_conversion(str[i])) || (str[i] != '%' && pf_is_conversion(str[i])) )
 				++i;
+			str[i] == '%' ? ++i : 0;
 			count += begin_conv(arg, str, &j, i - j);
+			i = j;
 		}
 		else
 		{
@@ -96,13 +98,18 @@ int main() {
 	char c;
 	c = 'a';
 	int l1, l2;
-	a = -1000000;
-	/*l1 = printf("abcdef%c\n",c);
-	l2 = ft_printf("abcdef%c\n", c);
+	a = -110;
+	char str[] = "asdfafdjhiofaiihafiohshiofdsssssssssssss;;;;;;;hfsaodiohfaihofashihifsadhioafdsio;hioafs";
+	l1 = printf("%100.0s\n, %s\n", str, str);
+	l2 = ft_printf("%100.0s\n, %s\n", str, str);
+	//l1 = printf("abcdef%c\n",c);
+	//l2 = ft_printf("abcdef%c\n", c);
 	//ft_printf("abcdef%d\n",a);
 	printf("count(printf) = %d\n",l1);
-	printf("count(ft_printf) = %d\n",l2);*/
+	printf("count(ft_printf) = %d\n",l2);
 	//ft_printf("aaa%-12c\n", c);
+	//printf("%10%%%%10.0%%d\n",a);
+	//ft_printf("%%%d\n", a);
 	return 0;
 }
 

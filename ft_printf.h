@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <limits.h>
 
 # define NONE 0
 # define FLAG_HASH 1
@@ -65,5 +66,6 @@ int			treat_width(t_param *param, const char *str, int *i);
 int treat_f_number(t_param param, va_list arg);
 int treat_f_char(t_param param, va_list arg);
 int treat_f_string(t_param param, va_list arg);
+int treat_f_percent(t_param param, va_list arg);
 
 #endif
