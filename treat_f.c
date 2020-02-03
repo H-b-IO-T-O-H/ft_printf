@@ -56,3 +56,8 @@ int treat_f_percent(t_param param, va_list arg)
 		return(repeat_write(a, param.width - 1) + pf_write("%",1)); //  В оригинальном принтф получить сдвиг процента не получилось, но реализация все равное такая, т.к. вывод совпал с чуваком с гита + хер знает, зачем такую
 	return(pf_write("%",1) + repeat_write(a, param.width - 1));//парашу выводить, но мб кто-то додумался и до таких тестов
 }
+
+int treat_f_float(t_param param, va_list arg)
+{
+
+}

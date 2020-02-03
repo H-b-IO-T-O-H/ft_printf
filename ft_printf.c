@@ -1,23 +1,25 @@
 #include "ft_printf.h"
+#include "float.h"
 
 int transform_param_conv(t_param param, va_list arg)//в заивисимости от типа преобразования возвращаем результат нужной отработавшей функции-обработчика
 {
 	int i;
-	static t_treat_conv (treat_array[9]) = {
+	static t_treat_conv (treat_array[10]) = {
 			{.conversion = 'd', .treat = treat_f_number},
 			{.conversion = 'o', .treat = treat_f_number},
 			{.conversion = 'u', .treat = treat_f_number},
 			{.conversion = 'x', .treat = treat_f_number},
 			{.conversion = 'X', .treat = treat_f_number},
-			{.conversion = 'c', .treat = treat_f_char},
-			{.conversion = 's', .treat = treat_f_string},
+			{.conversion = 'c', .treat = treat_f_char},//done
+			{.conversion = 's', .treat = treat_f_string},//done
 			{.conversion = 'p', .treat = treat_f_number},
-			{.conversion = '%', .treat = treat_f_percent},
+			{.conversion = 'f', .treat = treat_f_float},
+			{.conversion = '%', .treat = treat_f_percent},//done
 	};
 	i = -1;
 	if (param.error)
 		return (0);
-	while (++i < 9)
+	while (++i < 10)
 		if (param.conversion == treat_array[i].conversion)
 			return (treat_array[i].treat(param, arg));
 	return (0);
@@ -116,19 +118,3 @@ int main() {
 	//ft_printf("%%%d\n", a);
 	return 0;
 }
-/*
-По идее здесь нужны несколько функций для выделения:
- -флагов:  '#', '0', '-', '+', ' ', '/'' <--(апостроф тоже флаг)
- -ширины: добавляет пробелы(нули, если указан 0 перед модификатором) перед ЧИСЛОМ(выравнивание вправо), если длина числа меньше заданной ширины, если же наоборот,
-		  то параметр ширины игнорируется, и число выводится без сдвига.Если перед модификатором ширины стоит '-', то выравнивание влево(результат вывода дополнен справа пробелами)
-		  Причем модификатор отмечает именно символьные позиции, поэтому знак минус отрицательного числа тоже считается позицией.
-		  Надо еще разобраться с $ и со *
-		  подробнее о ширине: http://microsin.net/programming/arm/secrets-of-printf.html
- -точности: количество цифр после точки(по умолчанию 6)
- -модификатора длины: тип данных входного аргумента( особо не разбирался, но это тот тип, который в va_arg(arg,type) распознается
- -и только в конце типа преобразования: d и i - одно и то же (спросил в слаке, сказали, что это наследие scanf для переносимости printf)
- про остальное можно почитать в инете, там не сложно. Будем в начале реализовывать указанные  мануле типо diouxXcspf
- 
- для этого целесообрано создать массив функций и прогонять каждый символ, следующий после процента через них. Если окажется, что символ
- принадлежит нужной функции, то эта функция обрабатывает вывод, внося правки в param.(здесь указано нужное поле структуры)
-*/

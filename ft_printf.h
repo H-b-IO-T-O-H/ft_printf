@@ -14,6 +14,18 @@
 # define FLAG_SPACE 16
 # define FLAG_APOSTROPHE 32
 
+typedef union {
+	
+	long double D;
+	struct
+	{
+		__uintmax_t mantissa : 64;
+		__uintmax_t exponent : 15;
+		unsigned int sign : 1;
+		
+	} parts;
+} long_double_cast;
+
 typedef struct	s_string
 {
 	const char	*str;
@@ -22,7 +34,7 @@ typedef struct	s_string
 
 typedef enum	e_modifier
 {
-	NO = 0, L = 1, H = 2, J = 3, Z = 4, LL = 5, HH = 6 //условно взяты названия типов с чужого гита
+	NO = 0, L = 1, H = 2, J = 3, Z = 4, LL = 5, HH = 6
 }				t_modifier;
 
 typedef struct	s_param
@@ -67,5 +79,6 @@ int treat_f_number(t_param param, va_list arg);
 int treat_f_char(t_param param, va_list arg);
 int treat_f_string(t_param param, va_list arg);
 int treat_f_percent(t_param param, va_list arg);
+int treat_f_float(t_param param, va_list arg);
 
 #endif
