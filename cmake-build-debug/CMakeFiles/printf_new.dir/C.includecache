@@ -6,14 +6,10 @@
 
 #IncludeRegexTransform: 
 
-/home/vlad/CLionProjects/printf_new/ft_printf.c
-ft_printf.h
-/home/vlad/CLionProjects/printf_new/ft_printf.h
-float.h
-/home/vlad/CLionProjects/printf_new/float.h
-
 /home/vlad/CLionProjects/printf_new/ft_printf.h
 stdio.h
+-
+stdlib.h
 -
 stdarg.h
 -

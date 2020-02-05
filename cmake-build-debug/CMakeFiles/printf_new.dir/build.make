@@ -97,17 +97,17 @@ CMakeFiles/printf_new.dir/func.c.s: cmake_force
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vlad/CLionProjects/printf_new/func.c -o CMakeFiles/printf_new.dir/func.c.s
 
 CMakeFiles/printf_new.dir/ft_itoa.c.o: CMakeFiles/printf_new.dir/flags.make
-CMakeFiles/printf_new.dir/ft_itoa.c.o: ft_itoa.c
+CMakeFiles/printf_new.dir/ft_itoa.c.o: ../ft_itoa.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vlad/CLionProjects/printf_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/printf_new.dir/ft_itoa.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/ft_itoa.c.o   -c /home/vlad/CLionProjects/printf_new/cmake-build-debug/ft_itoa.c
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/ft_itoa.c.o   -c /home/vlad/CLionProjects/printf_new/ft_itoa.c
 
 CMakeFiles/printf_new.dir/ft_itoa.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/printf_new.dir/ft_itoa.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vlad/CLionProjects/printf_new/cmake-build-debug/ft_itoa.c > CMakeFiles/printf_new.dir/ft_itoa.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vlad/CLionProjects/printf_new/ft_itoa.c > CMakeFiles/printf_new.dir/ft_itoa.c.i
 
 CMakeFiles/printf_new.dir/ft_itoa.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/printf_new.dir/ft_itoa.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vlad/CLionProjects/printf_new/cmake-build-debug/ft_itoa.c -o CMakeFiles/printf_new.dir/ft_itoa.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vlad/CLionProjects/printf_new/ft_itoa.c -o CMakeFiles/printf_new.dir/ft_itoa.c.s
 
 CMakeFiles/printf_new.dir/treatment.c.o: CMakeFiles/printf_new.dir/flags.make
 CMakeFiles/printf_new.dir/treatment.c.o: ../treatment.c

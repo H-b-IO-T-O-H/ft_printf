@@ -81,7 +81,7 @@
 		<Unit filename="/home/vlad/CLionProjects/printf_new/check.c">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/home/vlad/CLionProjects/printf_new/cmake-build-debug/ft_itoa.c">
+		<Unit filename="/home/vlad/CLionProjects/printf_new/ft_itoa.c">
 			<Option target="printf_new"/>
 		</Unit>
 		<Unit filename="/home/vlad/CLionProjects/printf_new/ft_printf.c">

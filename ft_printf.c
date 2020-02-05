@@ -5,7 +5,7 @@ int transform_param_conv(t_param param, va_list arg)//в заивисимост�
 {
 	int i;
 	static t_treat_conv (treat_array[10]) = {
-			{.conversion = 'd', .treat = treat_f_number},
+			{.conversion = 'd', .treat = treat_f_number},//done
 			{.conversion = 'o', .treat = treat_f_number},
 			{.conversion = 'u', .treat = treat_f_number},
 			{.conversion = 'x', .treat = treat_f_number},
@@ -96,22 +96,18 @@ int ft_printf(const char *format, ...)
 }
 
 int main() {
-	int a;
-	char c;
-	c = 'a';
-	int l1, l2;
-	a = -110;
-	//char str[] = "asdfafdjhiofaiihafiohshiofdsssssssssssss;;;;;;;hfsaodiohfaihofashihifsadhioafdsio;hioafs";
-	char *s = NULL;
-	ft_printf("%10s\n", s);
-	printf("%10s",s);
-	//printf("%s",s);
+	int l1,l2,l;
+	
+	l = 0;
+	l1 = printf("%#o\n",l);
+	//l2 = ft_printf("%+-10.7d\n",l);
+	//ft_printf("%+-10.0hd",l1);
 	//l1 = printf("%100.0s\n, %s\n", str, str);
 	//l2 = ft_printf("%100.0s\n, %s\n", str, str);
 	//l1 = printf("abcdef%c\n",c);
 	//l2 = ft_printf("abcdef%c\n", c);
 	//ft_printf("abcdef%d\n",a);
-	//printf("count(printf) = %d\n",l1);
+	printf("count(printf) = %d\n",l1);
 	//printf("count(ft_printf) = %d\n",l2);
 	//ft_printf("aaa%-12c\n", c);
 	//printf("%10%%%%10.0%%d\n",a);

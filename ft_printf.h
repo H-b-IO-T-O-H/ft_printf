@@ -2,6 +2,7 @@
 #define PRINTF_NEW_FT_PRINTF_H
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
 #include <limits.h>
@@ -63,10 +64,11 @@ int		pf_is_flag(char c);
 int		pf_is_precision(char c);
 int		pf_is_valid(char c);
 int		pf_isdigit(int c);
-char	*ft_itoa(int nb);
+char	*ft_itoa(t_param param, __intmax_t nb, char sign, int *res);
+char *ft_uitoa(t_param param, __intmax_t nb, int *res);
 void	ft_putchar(char c);
 int		repeat_write(char c, int n);
-int		pf_write(const char *str, int len);
+int		pf_write(const char *str, int len, int flag);
 int		ft_strlen(const char *s);
 
 int treat_conversion(t_param *param, const char *str, int *i);

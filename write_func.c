@@ -1,8 +1,11 @@
 #include "ft_printf.h"
 
-int			pf_write(const char *str, int len)
+int			pf_write(const char *str, int len, int flag)
 {
+	if (!str)
+		return (0);
 	write(1, str, len);
+	flag ? free((void *)str) : 0;
 	return (len);
 }
 

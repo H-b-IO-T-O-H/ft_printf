@@ -9,6 +9,7 @@ int treat_conversion(t_param *param, const char *str, int *i)
 		(*i)++;
 		return (0);
 	}
+	printf("%c", str[*i]);
 	return (1);
 }
 
@@ -39,7 +40,7 @@ int treat_modifier(t_param *param, const char *str, int *i)
 {
 	t_modifier c;
 	
-	c = NONE;
+	c = NO;
 	if (!pf_is_modifier(str[*i]))
 		return (0);
 	if (str[*i] == 'l')
@@ -66,6 +67,7 @@ int treat_modifier(t_param *param, const char *str, int *i)
 		c = J;
 	else if (str[*i] == 'z')//extra
 		c = Z;
+	++*i;
 	param->mode = c;
 	return (0);
 }
