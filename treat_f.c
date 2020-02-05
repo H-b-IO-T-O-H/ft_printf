@@ -53,7 +53,7 @@ int treat_f_number(t_param param, va_list arg)
 	else if (param.mode == Z)
 		n = va_arg(arg, ssize_t);
 	else
-		n = va_arg(arg, int);
+		n = va_arg(arg, unsigned int);
 	if (param.mode == HH)
 		n = (unsigned char) n;
 	else if (param.mode == H)

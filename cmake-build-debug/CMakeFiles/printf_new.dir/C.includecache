@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/vlad/CLionProjects/printf_new/ft_printf.c
+ft_printf.h
+/home/vlad/CLionProjects/printf_new/ft_printf.h
+float.h
+/home/vlad/CLionProjects/printf_new/float.h
+
 /home/vlad/CLionProjects/printf_new/ft_printf.h
 stdio.h
 -
@@ -17,8 +23,4 @@ unistd.h
 -
 limits.h
 -
-
-/home/vlad/CLionProjects/printf_new/treat_f.c
-ft_printf.h
-/home/vlad/CLionProjects/printf_new/ft_printf.h
 

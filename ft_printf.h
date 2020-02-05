@@ -56,6 +56,16 @@ typedef struct	s_treat //
 	int				(*treat)(t_param, va_list);
 }				t_treat_conv;
 
+typedef struct s_for_itoa
+{
+	char *str;
+	int flag;
+	int base;
+	int length;
+	int count;
+	int i;
+	char conversion;
+} t_for_itoa;
 
 int		ft_atoi(const char *str, int allow_neg, int *result, int *i);
 int		pf_is_conversion(char c);
