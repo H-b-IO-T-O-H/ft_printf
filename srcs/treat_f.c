@@ -39,7 +39,7 @@ int treat_f_number_d(t_param param, va_list arg) {
 int treat_f_number(t_param param, va_list arg)
 {
 	int count;
-	intmax_t n;
+	uintmax_t n;
 	char *str;
 	
 	if (param.conversion == 'd')
@@ -108,7 +108,7 @@ int treat_f_string(t_param param, va_list arg)
 int treat_f_percent(t_param param, va_list arg)
 {
 	char a;
-	char c;
+
 	
 	a = param.flags & FLAG_ZERO ? '0' : ' ';
 	if ((param.flags & FLAG_MINUS) == 0)

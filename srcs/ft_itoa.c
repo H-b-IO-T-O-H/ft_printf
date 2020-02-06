@@ -5,10 +5,10 @@
 int len_base(char c, intmax_t nb, int *base)
 {
 	int len;
-	intmax_t n;
+	uintmax_t n;
 	
 	len = 0;
-	n = nb;
+	nb > 0 ? n = (uintmax_t) nb : (n = nb);
 	(c == 'x' || c == 'X' || c == 'p') ? *base = 16 : 0;
 	(c == 'u' || c == 'd') ? *base = 10 : 0;
 	c == 'o' ? *base = 8 : 0;
@@ -30,7 +30,7 @@ char	*ft_itoa(t_param param, intmax_t nb, char sign, int *res)
 	a.length < param.precision ? a.length = param.precision : 0;
 	(nb < 0 || sign == '+' || sign == ' ') ? a.length++ : 0;
 	nb < 0 ? sign = '-' : 0;
-	nb < 0 ? nb = -nb : 0;
+	nb < 0 ? nb = -(nb + 1) : 0;
 	*res = a.length;
 	if (!(a.str = (char *)malloc(a.length + 1)))
 		return (NULL);
@@ -39,6 +39,11 @@ char	*ft_itoa(t_param param, intmax_t nb, char sign, int *res)
 	while(a.count--)
 	{
 		a.str[--a.length] = nb % a.base + '0';
+		if (sign == '-')
+		{
+			sign = 0;
+			++a.str[a.length];
+		}
 		nb /= 10;
 	}
 	while (a.i < a.length)
@@ -46,7 +51,7 @@ char	*ft_itoa(t_param param, intmax_t nb, char sign, int *res)
 	return (a.str);
 }
 
-char *ft_uitoa(t_param param, intmax_t nb, int *res)
+char *ft_uitoa(t_param param, uintmax_t nb, int *res)
 {
 	t_for_itoa a;
 	char hex16[16] = "0123456789abcdef";
@@ -60,12 +65,12 @@ char *ft_uitoa(t_param param, intmax_t nb, int *res)
 	a.length = a.count;
 	a.length < param.precision ? a.length = param.precision : 0;
 	a.length == param.precision && a.flag == 1 ? a.length-- : 0;
-	(a.flag && nb) ? a.length += a.flag : 0;
+	((a.flag && nb) || (a.flag && param.conversion == 'p')) ? a.length += a.flag : 0;
 	*res =a.length;
 	if (!(a.str = (char *)malloc(a.length + 1)))
 		return (NULL);
 	a.str[a.length] = '\0';
-	if (a.flag == 2 && nb)
+	if ((a.flag == 2 && nb) || (a.flag && param.conversion == 'p'))
 	{
 		a.str[1] = (param.conversion == 'x' || param.conversion == 'p') ? 'x' : 'X';
 		++a.i;

@@ -80,28 +80,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/bjuice/ft_printf/check.c">
+		<Unit filename="/Users/bjuice/ft_printf/includes/ft_printf.h">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/Users/bjuice/ft_printf/ft_itoa.c">
+		<Unit filename="/Users/bjuice/ft_printf/mmm.c">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/Users/bjuice/ft_printf/ft_printf.c">
+		<Unit filename="/Users/bjuice/ft_printf/srcs/check.c">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/Users/bjuice/ft_printf/ft_printf.h">
+		<Unit filename="/Users/bjuice/ft_printf/srcs/ft_itoa.c">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/Users/bjuice/ft_printf/func.c">
+		<Unit filename="/Users/bjuice/ft_printf/srcs/ft_printf.c">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/Users/bjuice/ft_printf/treat_f.c">
+		<Unit filename="/Users/bjuice/ft_printf/srcs/func.c">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/Users/bjuice/ft_printf/treatment.c">
+		<Unit filename="/Users/bjuice/ft_printf/srcs/treat_f.c">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/Users/bjuice/ft_printf/write_func.c">
+		<Unit filename="/Users/bjuice/ft_printf/srcs/treatment.c">
+			<Option target="printf_new"/>
+		</Unit>
+		<Unit filename="/Users/bjuice/ft_printf/srcs/write_func.c">
 			<Option target="printf_new"/>
 		</Unit>
 		<Unit filename="/Users/bjuice/ft_printf/CMakeLists.txt">

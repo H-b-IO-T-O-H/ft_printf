@@ -4,13 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/bjuice/ft_printf/check.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/check.c.o"
-  "/Users/bjuice/ft_printf/ft_itoa.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/ft_itoa.c.o"
-  "/Users/bjuice/ft_printf/ft_printf.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/ft_printf.c.o"
-  "/Users/bjuice/ft_printf/func.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/func.c.o"
-  "/Users/bjuice/ft_printf/treat_f.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/treat_f.c.o"
-  "/Users/bjuice/ft_printf/treatment.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/treatment.c.o"
-  "/Users/bjuice/ft_printf/write_func.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/write_func.c.o"
+  "/Users/bjuice/ft_printf/mmm.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/mmm.c.o"
+  "/Users/bjuice/ft_printf/srcs/check.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/srcs/check.c.o"
+  "/Users/bjuice/ft_printf/srcs/ft_itoa.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/srcs/ft_itoa.c.o"
+  "/Users/bjuice/ft_printf/srcs/ft_printf.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/srcs/ft_printf.c.o"
+  "/Users/bjuice/ft_printf/srcs/func.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/srcs/func.c.o"
+  "/Users/bjuice/ft_printf/srcs/treat_f.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/srcs/treat_f.c.o"
+  "/Users/bjuice/ft_printf/srcs/treatment.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/srcs/treatment.c.o"
+  "/Users/bjuice/ft_printf/srcs/write_func.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/srcs/write_func.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

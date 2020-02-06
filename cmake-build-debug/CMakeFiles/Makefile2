@@ -74,12 +74,12 @@ preinstall:
 CMakeFiles/printf_new.dir/all:
 	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/depend
 	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target printf_new"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target printf_new"
 .PHONY : CMakeFiles/printf_new.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/printf_new.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/printf_new.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/printf_new.dir/rule

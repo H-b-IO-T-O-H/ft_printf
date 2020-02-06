@@ -123,194 +123,221 @@ printf_new/fast:
 	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/build
 .PHONY : printf_new/fast
 
-check.o: check.c.o
+mmm.o: mmm.c.o
 
-.PHONY : check.o
-
-# target to build an object file
-check.c.o:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/check.c.o
-.PHONY : check.c.o
-
-check.i: check.c.i
-
-.PHONY : check.i
-
-# target to preprocess a source file
-check.c.i:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/check.c.i
-.PHONY : check.c.i
-
-check.s: check.c.s
-
-.PHONY : check.s
-
-# target to generate assembly for a file
-check.c.s:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/check.c.s
-.PHONY : check.c.s
-
-ft_itoa.o: ft_itoa.c.o
-
-.PHONY : ft_itoa.o
+.PHONY : mmm.o
 
 # target to build an object file
-ft_itoa.c.o:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/ft_itoa.c.o
-.PHONY : ft_itoa.c.o
+mmm.c.o:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/mmm.c.o
+.PHONY : mmm.c.o
 
-ft_itoa.i: ft_itoa.c.i
+mmm.i: mmm.c.i
 
-.PHONY : ft_itoa.i
+.PHONY : mmm.i
 
 # target to preprocess a source file
-ft_itoa.c.i:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/ft_itoa.c.i
-.PHONY : ft_itoa.c.i
+mmm.c.i:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/mmm.c.i
+.PHONY : mmm.c.i
 
-ft_itoa.s: ft_itoa.c.s
+mmm.s: mmm.c.s
 
-.PHONY : ft_itoa.s
+.PHONY : mmm.s
 
 # target to generate assembly for a file
-ft_itoa.c.s:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/ft_itoa.c.s
-.PHONY : ft_itoa.c.s
+mmm.c.s:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/mmm.c.s
+.PHONY : mmm.c.s
 
-ft_printf.o: ft_printf.c.o
+srcs/check.o: srcs/check.c.o
 
-.PHONY : ft_printf.o
+.PHONY : srcs/check.o
 
 # target to build an object file
-ft_printf.c.o:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/ft_printf.c.o
-.PHONY : ft_printf.c.o
+srcs/check.c.o:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/check.c.o
+.PHONY : srcs/check.c.o
 
-ft_printf.i: ft_printf.c.i
+srcs/check.i: srcs/check.c.i
 
-.PHONY : ft_printf.i
+.PHONY : srcs/check.i
 
 # target to preprocess a source file
-ft_printf.c.i:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/ft_printf.c.i
-.PHONY : ft_printf.c.i
+srcs/check.c.i:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/check.c.i
+.PHONY : srcs/check.c.i
 
-ft_printf.s: ft_printf.c.s
+srcs/check.s: srcs/check.c.s
 
-.PHONY : ft_printf.s
+.PHONY : srcs/check.s
 
 # target to generate assembly for a file
-ft_printf.c.s:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/ft_printf.c.s
-.PHONY : ft_printf.c.s
+srcs/check.c.s:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/check.c.s
+.PHONY : srcs/check.c.s
 
-func.o: func.c.o
+srcs/ft_itoa.o: srcs/ft_itoa.c.o
 
-.PHONY : func.o
+.PHONY : srcs/ft_itoa.o
 
 # target to build an object file
-func.c.o:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/func.c.o
-.PHONY : func.c.o
+srcs/ft_itoa.c.o:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/ft_itoa.c.o
+.PHONY : srcs/ft_itoa.c.o
 
-func.i: func.c.i
+srcs/ft_itoa.i: srcs/ft_itoa.c.i
 
-.PHONY : func.i
+.PHONY : srcs/ft_itoa.i
 
 # target to preprocess a source file
-func.c.i:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/func.c.i
-.PHONY : func.c.i
+srcs/ft_itoa.c.i:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/ft_itoa.c.i
+.PHONY : srcs/ft_itoa.c.i
 
-func.s: func.c.s
+srcs/ft_itoa.s: srcs/ft_itoa.c.s
 
-.PHONY : func.s
+.PHONY : srcs/ft_itoa.s
 
 # target to generate assembly for a file
-func.c.s:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/func.c.s
-.PHONY : func.c.s
+srcs/ft_itoa.c.s:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/ft_itoa.c.s
+.PHONY : srcs/ft_itoa.c.s
 
-treat_f.o: treat_f.c.o
+srcs/ft_printf.o: srcs/ft_printf.c.o
 
-.PHONY : treat_f.o
+.PHONY : srcs/ft_printf.o
 
 # target to build an object file
-treat_f.c.o:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/treat_f.c.o
-.PHONY : treat_f.c.o
+srcs/ft_printf.c.o:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/ft_printf.c.o
+.PHONY : srcs/ft_printf.c.o
 
-treat_f.i: treat_f.c.i
+srcs/ft_printf.i: srcs/ft_printf.c.i
 
-.PHONY : treat_f.i
+.PHONY : srcs/ft_printf.i
 
 # target to preprocess a source file
-treat_f.c.i:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/treat_f.c.i
-.PHONY : treat_f.c.i
+srcs/ft_printf.c.i:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/ft_printf.c.i
+.PHONY : srcs/ft_printf.c.i
 
-treat_f.s: treat_f.c.s
+srcs/ft_printf.s: srcs/ft_printf.c.s
 
-.PHONY : treat_f.s
+.PHONY : srcs/ft_printf.s
 
 # target to generate assembly for a file
-treat_f.c.s:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/treat_f.c.s
-.PHONY : treat_f.c.s
+srcs/ft_printf.c.s:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/ft_printf.c.s
+.PHONY : srcs/ft_printf.c.s
 
-treatment.o: treatment.c.o
+srcs/func.o: srcs/func.c.o
 
-.PHONY : treatment.o
+.PHONY : srcs/func.o
 
 # target to build an object file
-treatment.c.o:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/treatment.c.o
-.PHONY : treatment.c.o
+srcs/func.c.o:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/func.c.o
+.PHONY : srcs/func.c.o
 
-treatment.i: treatment.c.i
+srcs/func.i: srcs/func.c.i
 
-.PHONY : treatment.i
+.PHONY : srcs/func.i
 
 # target to preprocess a source file
-treatment.c.i:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/treatment.c.i
-.PHONY : treatment.c.i
+srcs/func.c.i:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/func.c.i
+.PHONY : srcs/func.c.i
 
-treatment.s: treatment.c.s
+srcs/func.s: srcs/func.c.s
 
-.PHONY : treatment.s
+.PHONY : srcs/func.s
 
 # target to generate assembly for a file
-treatment.c.s:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/treatment.c.s
-.PHONY : treatment.c.s
+srcs/func.c.s:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/func.c.s
+.PHONY : srcs/func.c.s
 
-write_func.o: write_func.c.o
+srcs/treat_f.o: srcs/treat_f.c.o
 
-.PHONY : write_func.o
+.PHONY : srcs/treat_f.o
 
 # target to build an object file
-write_func.c.o:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/write_func.c.o
-.PHONY : write_func.c.o
+srcs/treat_f.c.o:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/treat_f.c.o
+.PHONY : srcs/treat_f.c.o
 
-write_func.i: write_func.c.i
+srcs/treat_f.i: srcs/treat_f.c.i
 
-.PHONY : write_func.i
+.PHONY : srcs/treat_f.i
 
 # target to preprocess a source file
-write_func.c.i:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/write_func.c.i
-.PHONY : write_func.c.i
+srcs/treat_f.c.i:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/treat_f.c.i
+.PHONY : srcs/treat_f.c.i
 
-write_func.s: write_func.c.s
+srcs/treat_f.s: srcs/treat_f.c.s
 
-.PHONY : write_func.s
+.PHONY : srcs/treat_f.s
 
 # target to generate assembly for a file
-write_func.c.s:
-	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/write_func.c.s
-.PHONY : write_func.c.s
+srcs/treat_f.c.s:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/treat_f.c.s
+.PHONY : srcs/treat_f.c.s
+
+srcs/treatment.o: srcs/treatment.c.o
+
+.PHONY : srcs/treatment.o
+
+# target to build an object file
+srcs/treatment.c.o:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/treatment.c.o
+.PHONY : srcs/treatment.c.o
+
+srcs/treatment.i: srcs/treatment.c.i
+
+.PHONY : srcs/treatment.i
+
+# target to preprocess a source file
+srcs/treatment.c.i:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/treatment.c.i
+.PHONY : srcs/treatment.c.i
+
+srcs/treatment.s: srcs/treatment.c.s
+
+.PHONY : srcs/treatment.s
+
+# target to generate assembly for a file
+srcs/treatment.c.s:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/treatment.c.s
+.PHONY : srcs/treatment.c.s
+
+srcs/write_func.o: srcs/write_func.c.o
+
+.PHONY : srcs/write_func.o
+
+# target to build an object file
+srcs/write_func.c.o:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/write_func.c.o
+.PHONY : srcs/write_func.c.o
+
+srcs/write_func.i: srcs/write_func.c.i
+
+.PHONY : srcs/write_func.i
+
+# target to preprocess a source file
+srcs/write_func.c.i:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/write_func.c.i
+.PHONY : srcs/write_func.c.i
+
+srcs/write_func.s: srcs/write_func.c.s
+
+.PHONY : srcs/write_func.s
+
+# target to generate assembly for a file
+srcs/write_func.c.s:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/write_func.c.s
+.PHONY : srcs/write_func.c.s
 
 # Help Target
 help:
@@ -321,27 +348,30 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... printf_new"
-	@echo "... check.o"
-	@echo "... check.i"
-	@echo "... check.s"
-	@echo "... ft_itoa.o"
-	@echo "... ft_itoa.i"
-	@echo "... ft_itoa.s"
-	@echo "... ft_printf.o"
-	@echo "... ft_printf.i"
-	@echo "... ft_printf.s"
-	@echo "... func.o"
-	@echo "... func.i"
-	@echo "... func.s"
-	@echo "... treat_f.o"
-	@echo "... treat_f.i"
-	@echo "... treat_f.s"
-	@echo "... treatment.o"
-	@echo "... treatment.i"
-	@echo "... treatment.s"
-	@echo "... write_func.o"
-	@echo "... write_func.i"
-	@echo "... write_func.s"
+	@echo "... mmm.o"
+	@echo "... mmm.i"
+	@echo "... mmm.s"
+	@echo "... srcs/check.o"
+	@echo "... srcs/check.i"
+	@echo "... srcs/check.s"
+	@echo "... srcs/ft_itoa.o"
+	@echo "... srcs/ft_itoa.i"
+	@echo "... srcs/ft_itoa.s"
+	@echo "... srcs/ft_printf.o"
+	@echo "... srcs/ft_printf.i"
+	@echo "... srcs/ft_printf.s"
+	@echo "... srcs/func.o"
+	@echo "... srcs/func.i"
+	@echo "... srcs/func.s"
+	@echo "... srcs/treat_f.o"
+	@echo "... srcs/treat_f.i"
+	@echo "... srcs/treat_f.s"
+	@echo "... srcs/treatment.o"
+	@echo "... srcs/treatment.i"
+	@echo "... srcs/treatment.s"
+	@echo "... srcs/write_func.o"
+	@echo "... srcs/write_func.i"
+	@echo "... srcs/write_func.s"
 .PHONY : help
 
 

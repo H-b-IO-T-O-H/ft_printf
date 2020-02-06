@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/bjuice/ft_printf/ft_printf.h
+/Users/bjuice/ft_printf/includes/ft_printf.h
 stdio.h
 -
 stdlib.h
@@ -18,7 +18,11 @@ unistd.h
 limits.h
 -
 
-/Users/bjuice/ft_printf/treat_f.c
-ft_printf.h
-/Users/bjuice/ft_printf/ft_printf.h
+/Users/bjuice/ft_printf/srcs/ft_itoa.c
+stdlib.h
+-
+stdio.h
+-
+../includes/ft_printf.h
+/Users/bjuice/ft_printf/includes/ft_printf.h
 
