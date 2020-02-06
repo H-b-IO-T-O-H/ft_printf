@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/bjuice/ft_printf/ft_printf.c
-ft_printf.h
-/Users/bjuice/ft_printf/ft_printf.h
-float.h
-/Users/bjuice/ft_printf/float.h
-
 /Users/bjuice/ft_printf/ft_printf.h
 stdio.h
 -
@@ -23,4 +17,8 @@ unistd.h
 -
 limits.h
 -
+
+/Users/bjuice/ft_printf/treat_f.c
+ft_printf.h
+/Users/bjuice/ft_printf/ft_printf.h
 

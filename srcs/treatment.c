@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int treat_conversion(t_param *param, const char *str, int *i)
 {

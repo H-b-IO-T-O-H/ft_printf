@@ -3,4 +3,4 @@ project(printf_new C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(printf_new ft_printf.c check.c ft_printf.h func.c ft_itoa.c treatment.c treat_f.c write_func.c)
+add_executable(printf_new srcs/ft_printf.c srcs/check.c includes/ft_printf.h srcs/func.c " /ft_itoa.c" srcs/treatment.c srcs/treat_f.c srcs/write_func.c)

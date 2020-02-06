@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int len_base(char c, intmax_t nb, int *base)
 {

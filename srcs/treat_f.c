@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int treat_f_number_d(t_param param, va_list arg) {
 	int count;
@@ -119,4 +119,5 @@ int treat_f_percent(t_param param, va_list arg)
 int treat_f_float(t_param param, va_list arg)
 {
 
+	return (0);
 }

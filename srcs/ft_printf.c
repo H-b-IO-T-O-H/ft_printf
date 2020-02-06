@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 #include "float.h"
 
 int transform_param_conv(t_param param, va_list arg)//в заивисимости от типа преобразования возвращаем результат нужной отработавшей функции-обработчика
@@ -95,24 +95,3 @@ int ft_printf(const char *format, ...)
 	return (result);
 }
 
-#define str_check "%p\n"
-
-int main() {
-	int l1,l2,l;
-	
-	l = 168953;
-	l1 = printf(str_check,&l);
-	l2 = ft_printf(str_check,&l);
-	//ft_printf("%+-10.0hd",l1);
-	//l1 = printf("%100.0s\n, %s\n", str, str);
-	//l2 = ft_printf("%100.0s\n, %s\n", str, str);
-	//l1 = printf("abcdef%c\n",c);
-	//l2 = ft_printf("abcdef%c\n", c);
-	//ft_printf("abcdef%d\n",a);
-	//printf("count(printf) = %d\n",l1);
-	//printf("count(ft_printf) = %d\n",l2);
-	//ft_printf("aaa%-12c\n", c);
-	//printf("%10%%%%10.0%%d\n",a);
-	//ft_printf("%%%d\n", a);
-	return 0;
-}

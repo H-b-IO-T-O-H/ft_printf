@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 
 int		ft_atoi(const char *str, int allow_neg, int *result, int *i)
