@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/vlad/CLionProjects/printf_new/check.c" "/home/vlad/CLionProjects/printf_new/cmake-build-debug/CMakeFiles/printf_new.dir/check.c.o"
-  "/home/vlad/CLionProjects/printf_new/ft_itoa.c" "/home/vlad/CLionProjects/printf_new/cmake-build-debug/CMakeFiles/printf_new.dir/ft_itoa.c.o"
-  "/home/vlad/CLionProjects/printf_new/ft_printf.c" "/home/vlad/CLionProjects/printf_new/cmake-build-debug/CMakeFiles/printf_new.dir/ft_printf.c.o"
-  "/home/vlad/CLionProjects/printf_new/func.c" "/home/vlad/CLionProjects/printf_new/cmake-build-debug/CMakeFiles/printf_new.dir/func.c.o"
-  "/home/vlad/CLionProjects/printf_new/treat_f.c" "/home/vlad/CLionProjects/printf_new/cmake-build-debug/CMakeFiles/printf_new.dir/treat_f.c.o"
-  "/home/vlad/CLionProjects/printf_new/treatment.c" "/home/vlad/CLionProjects/printf_new/cmake-build-debug/CMakeFiles/printf_new.dir/treatment.c.o"
-  "/home/vlad/CLionProjects/printf_new/write_func.c" "/home/vlad/CLionProjects/printf_new/cmake-build-debug/CMakeFiles/printf_new.dir/write_func.c.o"
+  "/Users/bjuice/ft_printf/check.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/check.c.o"
+  "/Users/bjuice/ft_printf/ft_itoa.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/ft_itoa.c.o"
+  "/Users/bjuice/ft_printf/ft_printf.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/ft_printf.c.o"
+  "/Users/bjuice/ft_printf/func.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/func.c.o"
+  "/Users/bjuice/ft_printf/treat_f.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/treat_f.c.o"
+  "/Users/bjuice/ft_printf/treatment.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/treatment.c.o"
+  "/Users/bjuice/ft_printf/write_func.c" "/Users/bjuice/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/write_func.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

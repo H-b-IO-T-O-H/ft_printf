@@ -95,12 +95,14 @@ int ft_printf(const char *format, ...)
 	return (result);
 }
 
+#define str_check "%p\n"
+
 int main() {
 	int l1,l2,l;
 	
-	l = 10;
-	l1 = printf("%.3o\n",l);
-	l2 = ft_printf("%.3o\n",l);
+	l = 168953;
+	l1 = printf(str_check,&l);
+	l2 = ft_printf(str_check,&l);
 	//ft_printf("%+-10.0hd",l1);
 	//l1 = printf("%100.0s\n, %s\n", str, str);
 	//l2 = ft_printf("%100.0s\n, %s\n", str, str);

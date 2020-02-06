@@ -8,101 +8,103 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/vlad/CLionProjects/printf_new/cmake-build-debug"/>
+				<Option working_dir="/Users/bjuice/ft_printf/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/vlad/CLionProjects/printf_new/cmake-build-debug"/>
+				<Option working_dir="/Users/bjuice/ft_printf/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="printf_new">
-				<Option output="/home/vlad/CLionProjects/printf_new/cmake-build-debug/printf_new" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/vlad/CLionProjects/printf_new/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 printf_new"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="printf_new/fast">
-				<Option output="/home/vlad/CLionProjects/printf_new/cmake-build-debug/printf_new" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/vlad/CLionProjects/printf_new/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 printf_new/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/vlad/CLionProjects/printf_new/cmake-build-debug"/>
+				<Option working_dir="/Users/bjuice/ft_printf/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/vlad/CLionProjects/printf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="printf_new">
+				<Option output="/Users/bjuice/ft_printf/cmake-build-debug/printf_new" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/bjuice/ft_printf/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 printf_new"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="printf_new/fast">
+				<Option output="/Users/bjuice/ft_printf/cmake-build-debug/printf_new" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/bjuice/ft_printf/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 printf_new/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/bjuice/ft_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/vlad/CLionProjects/printf_new/check.c">
+		<Unit filename="/Users/bjuice/ft_printf/check.c">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/home/vlad/CLionProjects/printf_new/ft_itoa.c">
+		<Unit filename="/Users/bjuice/ft_printf/ft_itoa.c">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/home/vlad/CLionProjects/printf_new/ft_printf.c">
+		<Unit filename="/Users/bjuice/ft_printf/ft_printf.c">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/home/vlad/CLionProjects/printf_new/ft_printf.h">
+		<Unit filename="/Users/bjuice/ft_printf/ft_printf.h">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/home/vlad/CLionProjects/printf_new/func.c">
+		<Unit filename="/Users/bjuice/ft_printf/func.c">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/home/vlad/CLionProjects/printf_new/treat_f.c">
+		<Unit filename="/Users/bjuice/ft_printf/treat_f.c">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/home/vlad/CLionProjects/printf_new/treatment.c">
+		<Unit filename="/Users/bjuice/ft_printf/treatment.c">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/home/vlad/CLionProjects/printf_new/write_func.c">
+		<Unit filename="/Users/bjuice/ft_printf/write_func.c">
 			<Option target="printf_new"/>
 		</Unit>
-		<Unit filename="/home/vlad/CLionProjects/printf_new/CMakeLists.txt">
+		<Unit filename="/Users/bjuice/ft_printf/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

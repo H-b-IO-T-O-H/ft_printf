@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include "ft_printf.h"
 
-int len_base(char c, __intmax_t nb, int *base)
+int len_base(char c, intmax_t nb, int *base)
 {
 	int len;
-	__intmax_t n;
+	intmax_t n;
 	
 	len = 0;
 	n = nb;
@@ -20,7 +20,7 @@ int len_base(char c, __intmax_t nb, int *base)
 	return (len + (n == 0));
 }
 
-char	*ft_itoa(t_param param, __intmax_t nb, char sign, int *res)
+char	*ft_itoa(t_param param, intmax_t nb, char sign, int *res)
 {
 	t_for_itoa a;
 	
@@ -46,28 +46,42 @@ char	*ft_itoa(t_param param, __intmax_t nb, char sign, int *res)
 	return (a.str);
 }
 
-char *ft_uitoa(t_param param, __intmax_t nb, int *res)
+char *ft_uitoa(t_param param, intmax_t nb, int *res)
 {
 	t_for_itoa a;
 	char hex16[16] = "0123456789abcdef";
 	char HEX16[16] = "0123456789ABCDEF";
 	
 	a.flag = 0;
+	a.i = 0;
 	if (param.flags & FLAG_HASH || param.conversion == 'p')
 		(param.conversion == 'x' || param.conversion == 'X' || param.conversion == 'p') ? a.flag = 2 : (a.flag = 1);
 	a.count = len_base(param.conversion, nb, &a.base);
 	a.length = a.count;
+	a.length < param.precision ? a.length = param.precision : 0;
+	a.length == param.precision && a.flag == 1 ? a.length-- : 0;
 	(a.flag && nb) ? a.length += a.flag : 0;
+	*res =a.length;
 	if (!(a.str = (char *)malloc(a.length + 1)))
 		return (NULL);
 	a.str[a.length] = '\0';
-	(a.flag == 2 && nb) ? a.str[1] = (param.conversion == 'x' || param.conversion == 'p') ? 'x' : 'X': 0;
-	a.flag ? a.str[0] = '0' : 0;
+	if (a.flag == 2 && nb)
+	{
+		a.str[1] = (param.conversion == 'x' || param.conversion == 'p') ? 'x' : 'X';
+		++a.i;
+	}
+	if (a.flag)
+	{
+		a.str[0] = '0';
+		++a.i;
+	}
 	while(a.count--)
 	{
 		param.conversion == 'x' || param.conversion == 'p' ?
 		a.str[--a.length] = hex16[nb % a.base]: (a.str[--a.length] = HEX16[nb % a.base]);
 		nb /= a.base;
 	}
-	printf("%s", a.str);
+	while (a.i < a.length)
+		a.str[a.i++] = '0';
+	return (a.str);
 }
