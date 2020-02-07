@@ -3,7 +3,7 @@
 int treat_f_number_d(t_param param, va_list arg) {
 	int count;
 	char sign;
-	intmax_t n;
+	__intmax_t n;
 	char *str;
 	
 	sign = 0;
@@ -13,7 +13,7 @@ int treat_f_number_d(t_param param, va_list arg) {
 	else if (param.mode == LL)
 		n = va_arg(arg, long long);
 	else if (param.mode == J)
-		n = va_arg(arg, intmax_t);
+		n = va_arg(arg, __intmax_t);
 	else if (param.mode == Z)
 		n = va_arg(arg, ssize_t); // уточнить не size_t случаем!!!!!!!!!!!!!!!!!!!
 	else
@@ -39,9 +39,11 @@ int treat_f_number_d(t_param param, va_list arg) {
 int treat_f_number(t_param param, va_list arg)
 {
 	int count;
-	uintmax_t n;
+	int flag_clear;
+	__uintmax_t n;
 	char *str;
 	
+	flag_clear = 1;
 	if (param.conversion == 'd')
 		return(treat_f_number_d(param, arg));
 	if (param.mode == L)
@@ -49,7 +51,7 @@ int treat_f_number(t_param param, va_list arg)
 	else if (param.mode == LL)
 		n = va_arg(arg, unsigned long long);
 	else if (param.mode == J)
-		n = va_arg(arg, uintmax_t);
+		n = va_arg(arg, __uintmax_t);
 	else if (param.mode == Z)
 		n = va_arg(arg, ssize_t);
 	else
@@ -60,14 +62,21 @@ int treat_f_number(t_param param, va_list arg)
 		n = (unsigned short) n;
 	if (!param.precision && !n)//+ x  и n==0 при conv = o
 		return (0);
-	str = ft_uitoa(param, n, &count);
+	if (param.conversion == 'p' && !n)
+	{
+		str = "(nil)";
+		count = 5;
+		flag_clear = 0;
+	}
+	else
+		str = ft_uitoa(param, n, &count);
 	if (param.width > count && str)
 	{
 		if (param.flags & FLAG_MINUS)
-			return(pf_write(str,count, 1) + repeat_write(' ', param.width - count));
-		return(repeat_write(' ', param.width - count)+ pf_write(str, count, 1));
+			return(pf_write(str,count, flag_clear) + repeat_write(' ', param.width - count));
+		return(repeat_write(' ', param.width - count)+ pf_write(str, count, flag_clear));
 	}
-	return(pf_write(str, count, 1));
+	return(pf_write(str, count, flag_clear));
 }
 
 int treat_f_char(t_param param, va_list arg)
@@ -108,7 +117,6 @@ int treat_f_string(t_param param, va_list arg)
 int treat_f_percent(t_param param, va_list arg)
 {
 	char a;
-
 	
 	a = param.flags & FLAG_ZERO ? '0' : ' ';
 	if ((param.flags & FLAG_MINUS) == 0)

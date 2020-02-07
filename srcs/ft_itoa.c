@@ -2,16 +2,16 @@
 #include <stdio.h>
 #include "../includes/ft_printf.h"
 
-int len_base(char c, intmax_t nb, int *base)
+int len_base(char c, __intmax_t nb, int *base)
 {
 	int len;
-	uintmax_t n;
+	__intmax_t n;
 	
 	len = 0;
-	nb > 0 ? n = (uintmax_t) nb : (n = nb);
 	(c == 'x' || c == 'X' || c == 'p') ? *base = 16 : 0;
 	(c == 'u' || c == 'd') ? *base = 10 : 0;
 	c == 'o' ? *base = 8 : 0;
+	n = nb;
 	while(nb)
 	{
 		nb /= *base;
@@ -20,7 +20,12 @@ int len_base(char c, intmax_t nb, int *base)
 	return (len + (n == 0));
 }
 
-char	*ft_itoa(t_param param, intmax_t nb, char sign, int *res)
+void treat_min_value()
+{
+
+}
+
+char	*ft_itoa(t_param param, __intmax_t nb, char sign, int *res)
 {
 	t_for_itoa a;
 	
@@ -30,7 +35,7 @@ char	*ft_itoa(t_param param, intmax_t nb, char sign, int *res)
 	a.length < param.precision ? a.length = param.precision : 0;
 	(nb < 0 || sign == '+' || sign == ' ') ? a.length++ : 0;
 	nb < 0 ? sign = '-' : 0;
-	nb < 0 ? nb = -(nb + 1) : 0;
+	nb < 0 ? nb = -nb : 0;
 	*res = a.length;
 	if (!(a.str = (char *)malloc(a.length + 1)))
 		return (NULL);
@@ -39,11 +44,6 @@ char	*ft_itoa(t_param param, intmax_t nb, char sign, int *res)
 	while(a.count--)
 	{
 		a.str[--a.length] = nb % a.base + '0';
-		if (sign == '-')
-		{
-			sign = 0;
-			++a.str[a.length];
-		}
 		nb /= 10;
 	}
 	while (a.i < a.length)
@@ -51,7 +51,7 @@ char	*ft_itoa(t_param param, intmax_t nb, char sign, int *res)
 	return (a.str);
 }
 
-char *ft_uitoa(t_param param, uintmax_t nb, int *res)
+char *ft_uitoa(t_param param, __uintmax_t nb, int *res)
 {
 	t_for_itoa a;
 	char hex16[16] = "0123456789abcdef";
