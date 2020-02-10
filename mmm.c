@@ -6,7 +6,6 @@
 
 int main()
 {
-	void *i = 0;
 	int l1,l2;
 	char str[10] = "a\t\adfafsdf";
 	
