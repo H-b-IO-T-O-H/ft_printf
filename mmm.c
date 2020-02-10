@@ -6,15 +6,16 @@
 
 int main()
 {
-void *i = 0;
+	void *i = 0;
 	int l1,l2;
+	char str[10] = "a\t\adfafsdf";
 	
-
-
-	
-	 l1 = printf("{%Lf}\n", 1444565444646.646542524224l);
-	l2 = ft_printf("{%Lf}", 1444565444646.646542524224l);
-	//printf("\nl1 = %d, l2 = %d", l1, l2);
+	char *str1=NULL;
+	//l1 = printf("111%.100s\n", str);
+	//l2 = ft_printf("111%100s\n", str);
+	l2 = ft_printf("%10r", str);
+	printf("\nl1 = %d, l2 = %d", l1, l2);
 	//printf("%llf", 1.1l);
 	return 0;
 }
+

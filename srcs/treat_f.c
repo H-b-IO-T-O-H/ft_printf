@@ -63,24 +63,24 @@ int treat_f_char(t_param param, va_list arg)
 int treat_f_string(t_param param, va_list arg)
 {
 	char *str;
-	int i;
+	int flag;
 	int length;
 	
-	i = -1;
 	str = va_arg(arg, char *);
 	length = ft_strlen(str);
-	if (!str)
+	if (!str || (param.conversion == 'r' && param.precision == -1))
 	{
-		str = "(null)";
-		length = 6;
+		str = (!str ? "(null)" : "NoPre");
+		str[0] == '(' ? length = 6 : (param.precision = 6);
 	}
-	param.precision == -1 ? param.precision = INT_MAX : 0;
-	param.precision > length ? param.precision = length : 0;
+	param.precision == -1 && param.conversion != 'r' ? param.precision = INT_MAX : 0;
+	param.precision > length && param.conversion != 'r' ? param.precision = length : 0;
+	flag = (param.conversion == 'r' ? -1 : 0);
 	if ((param.flags & FLAG_MINUS) == 0 && param.width > param.precision)
-		return(repeat_write(' ', param.width - param.precision) + pf_write(str,param.precision,0));
+		return(repeat_write(' ', param.width - param.precision) + pf_write(str,param.precision, flag));
 	if (param.width > param.precision)
-		return(pf_write(str,param.precision,0) + repeat_write(' ', param.width - param.precision));
-	return (pf_write(str, param.precision,0));
+		return(pf_write(str,param.precision, flag) + repeat_write(' ', param.width - param.precision));
+	return (pf_write(str, param.precision, flag));
 }
 
 int treat_f_percent(t_param param, va_list arg)
@@ -91,6 +91,11 @@ int treat_f_percent(t_param param, va_list arg)
 	if ((param.flags & FLAG_MINUS) == 0)
 		return(repeat_write(a, param.width - 1) + pf_write("%",1,0)); //  В оригинальном принтф получить сдвиг процента не получилось, но реализация все равное такая, т.к. вывод совпал с чуваком с гита + хер знает, зачем такую
 	return(pf_write("%",1,0) + repeat_write(a, param.width - 1));//парашу выводить, но мб кто-то додумался и до таких тестов
+}
+
+int treat_f_date(t_param param, va_list arg)
+{
+
 }
 
 double multiplication(double num, int *size)
@@ -120,7 +125,6 @@ void handle_integer(double *num, char **str, int *i, double multipl)
 		(*i)++;
 	}
 }
-
 
 int handle_decimals(char **str, int *i, double num, int precision)
 {

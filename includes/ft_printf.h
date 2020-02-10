@@ -85,8 +85,9 @@ int		ft_itoa(t_param param, __intmax_t nb, char sign);
 int     ft_uitoa(t_param param, __uintmax_t nb);
 void	ft_putchar(char c);
 int		repeat_write(char c, int n);
-int		pf_write(const char *str, int len, int flag);
+int		pf_write(char *str, int len, int flag);
 int		ft_strlen(const char *s);
+int		ft_isprint(int c);
 
 int treat_conversion(t_param *param, const char *str, int *i);
 int treat_flags(t_param *param, const char *str, int *i);
@@ -95,6 +96,7 @@ int treat_precision(t_param *param, const char *str, int *i);
 int			treat_width(t_param *param, const char *str, int *i);
 
 int treat_f_number(t_param param, va_list arg);
+int treat_f_date(t_param param, va_list arg);
 int treat_f_char(t_param param, va_list arg);
 int treat_f_string(t_param param, va_list arg);
 int treat_f_percent(t_param param, va_list arg);

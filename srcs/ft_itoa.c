@@ -10,6 +10,7 @@ int len_base(char c, __uintmax_t nb, int *base)
 	(c == 'x' || c == 'X' || c == 'p') ? *base = 16 : 0;
 	(c == 'u' || c == 'd') ? *base = 10 : 0;
 	c == 'o' ? *base = 8 : 0;
+	c == 'b' ? *base = 2 : 0;
 	while(nb)
 	{
 		nb /= *base;

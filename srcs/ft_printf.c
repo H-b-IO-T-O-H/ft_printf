@@ -4,11 +4,14 @@
 int transform_param_conv(t_param param, va_list arg)//в заивисимости от типа преобразования возвращаем результат нужной отработавшей функции-обработчика
 {
 	int i;
-	static t_treat_conv (treat_array[10]) = {
+	static t_treat_conv (treat_array[13]) = {
 			{.conversion = 'd', .treat = treat_f_number},//done
 			{.conversion = 'o', .treat = treat_f_number},
 			{.conversion = 'u', .treat = treat_f_number},
 			{.conversion = 'x', .treat = treat_f_number},
+			{.conversion = 'b', .treat = treat_f_number},//!!!!!!!!!!!
+			{.conversion = 'r', .treat = treat_f_string},//!!!!!!!!!!!
+			{.conversion = 'k', .treat = treat_f_date},//!!!!!!!!!!!
 			{.conversion = 'X', .treat = treat_f_number},
 			{.conversion = 'c', .treat = treat_f_char},//done
 			{.conversion = 's', .treat = treat_f_string},//done
@@ -19,7 +22,7 @@ int transform_param_conv(t_param param, va_list arg)//в заивисимост�
 	i = -1;
 	if (param.error)
 		return (0);
-	while (++i < 10)
+	while (++i < 13)
 		if (param.conversion == treat_array[i].conversion)
 			return (treat_array[i].treat(param, arg));
 	return (0);
@@ -68,11 +71,12 @@ int format_parser(const char *str, va_list arg)//разделяем выраже
 {
 	int i;
 	int j;
+	int k;
 	int count;
 	
 	count = 0;
 	i = 0;
-	j = 0;
+	
 	while (str[i])
 	{
 		if (str[i] == '%')
@@ -85,9 +89,12 @@ int format_parser(const char *str, va_list arg)//разделяем выраже
 			i = j;
 		}
 		else
-		{
-			ft_putchar(str[i++]);
-			++count;
+			{
+				k = i;
+				while (str[i] && str[i] != '%')
+					++i;
+				count += i - k;
+				write(1, str + k, i - k);
 		}
 	}
 	return (count);

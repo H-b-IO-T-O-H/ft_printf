@@ -23,3 +23,8 @@ int		ft_atoi(const char *str, int allow_neg, int *result, int *i)
 	*result = (neg ? -nbr : nbr);
 	return (0);
 }
+
+int	ft_isprint(int c)
+{
+	return (c >= 32 && c <= 126);
+}
