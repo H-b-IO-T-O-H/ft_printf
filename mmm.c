@@ -1,20 +1,20 @@
 
 #include "includes/ft_printf.h"
 
-#define check_str "%p\n"
-#define arg 1
+#define check_str "%-15.10f\n"
+#define arg l
 
 int main()
 {
-	int l1;
-	int l2;
-	void* s;
+void *i = 0;
+	int l1,l2;
+	
 
-	s = 0;
-	//l1 = printf(check_str,s);
-	//l2 = ft_printf(check_str, s);
-	printf("%lld\n", LLONG_MIN);
-	ft_printf("%lld\n", LLONG_MIN);
-	//printf("printf = %d, ft_printf = %d\n", l1, l2);
+
+	
+	l1 = printf("{%f}{%lf}{%Lf}\n", 1e40, 1444565444646.646542424224,1);
+	l2 = ft_printf("{%f}{%lf}{%Lf}", 1e40, 1444565444646.646542424224,1444565444646.646542424224);
+	//printf("\nl1 = %d, l2 = %d", l1, l2);
+	//printf("%llf", 1.1l);
 	return 0;
 }

@@ -25,7 +25,7 @@ inline extern int			pf_is_conversion(char c)
 
 inline extern int			pf_is_modifier(char c)
 {
-	return (ft_strchr("hljz", c) != NULL);
+	return (ft_strchr("hljzL", c) != NULL);
 }
 
 inline extern int			pf_is_flag(char c)

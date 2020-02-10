@@ -59,12 +59,17 @@ typedef struct	s_treat //
 typedef struct s_for_itoa
 {
 	char *str;
+	char sign;
+	char flag_fill;
 	int flag;
 	int base;
 	int length;
 	int count;
 	int i;
-	char conversion;
+	int j;
+	int k;
+	__uintmax_t buf;
+	__uintmax_t nb;
 } t_for_itoa;
 
 int ft_printf(const char *format, ...);
@@ -76,8 +81,8 @@ int		pf_is_flag(char c);
 int		pf_is_precision(char c);
 int		pf_is_valid(char c);
 int		pf_isdigit(int c);
-char	*ft_itoa(t_param param, __intmax_t nb, char sign, int *res);
-char *ft_uitoa(t_param param, __uintmax_t nb, int *res);
+int		ft_itoa(t_param param, __intmax_t nb, char sign);
+int     ft_uitoa(t_param param, __uintmax_t nb);
 void	ft_putchar(char c);
 int		repeat_write(char c, int n);
 int		pf_write(const char *str, int len, int flag);

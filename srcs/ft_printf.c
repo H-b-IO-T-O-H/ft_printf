@@ -53,6 +53,14 @@ int begin_conv(va_list arg, const char *str, int *i, int len)//выделяем 
 	}
 	param.conversion == 'i' ? param.conversion = 'd' : 0;
 	param.conversion == 'p' ? param.mode = LL : 0;
+	param.width == -2 ? param.width = va_arg(arg, int) : 0;
+	if (param.width < 0)
+	{
+		param.flags |= FLAG_MINUS;
+		param.width = -param.width;
+	}
+	param.precision == -2 ? param.precision = va_arg(arg, int) : 0;
+	param.precision < 0 && param.precision != -1 ? param.precision = -1 : 0;
 	return (transform_param_conv(param, arg));
 }
 

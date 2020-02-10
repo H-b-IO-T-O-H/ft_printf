@@ -43,13 +43,15 @@ int treat_modifier(t_param *param, const char *str, int *i)
 	c = NO;
 	if (!pf_is_modifier(str[*i]))
 		return (0);
-	if (str[*i] == 'l')
+	if (str[*i] == 'l' || str[*i] == 'L')
 	{
 		if (str[*i + 1] == 'l')
 		{
 			++*i;
 			c = LL;
 		}
+		else if (str[*i] == 'L')
+			c = LL;
 		else
 			c = L;
 	}
@@ -81,7 +83,12 @@ int treat_precision(t_param *param, const char *str, int *i)
 		return (0);
 	param->precision = 0;
 	++*i;
-	if (ft_atoi(str, 0, &p, i))//у точности не может быть +/-, поэтому флаг allow_neg = 0
+	if (str[*i] == '*')
+	{
+		++*i;
+		p = -2;
+	}
+	else if (ft_atoi(str, 0, &p, i))//у точности не может быть +/-, поэтому флаг allow_neg = 0
 		return (1);
 	param->precision = p;
 	return (0);
@@ -90,9 +97,12 @@ int treat_precision(t_param *param, const char *str, int *i)
 int			treat_width(t_param *param, const char *str, int *i)//как обрабатывать $ и * пока хз
 {
 	int width;
-	int is_pos;
 	
-	if (ft_atoi(str, 0, &width, i)) //не может содержать + и -
+	if (str[*i] == '*')
+	{
+		++*i;
+		width = -2;
+	} else if (ft_atoi(str, 0, &width, i))
 		return (1);
 	param->width = width;
 	return (0);
