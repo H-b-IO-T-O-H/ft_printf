@@ -221,7 +221,7 @@ int float_to_str(char **str, double num, int precision, int neg)
 	{
 		size++;
 		neg = 1;
-		num = -num;
+		num = -num;//danger min max
 	}
 	multipl = multiplication(num, &size); // считаем сколько степеней 10ки в целой части
 	size += precision;
@@ -248,12 +248,10 @@ int treat_f_float(t_param param, va_list arg)
 	long double nb;
 	int size;
 	int neg;
-	
 	if (param.precision < 0)
 		param.precision = 6;
 	neg = 0;
-	//param.mode == LL ? nb = va_arg(arg, long double) : (nb = va_arg(arg, double));
-	nb = va_arg(arg, double);
+	param.mode == LL ? nb = va_arg(arg, long double) : (nb = va_arg(arg, double));
 	size = float_to_str(&str, nb, param.precision, neg);
 	if (param.width >= size && param.flags == FLAG_PLUS)
 		return(repeat_write(' ', param.width-(size+2)) + pf_write("+", 1, 0) + pf_write(str, size+1, 0));
