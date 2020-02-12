@@ -4,14 +4,13 @@
 int transform_param_conv(t_param param, va_list arg)//в заивисимости от типа преобразования возвращаем результат нужной отработавшей функции-обработчика
 {
 	int i;
-	static t_treat_conv (treat_array[13]) = {
+	static t_treat_conv (treat_array[12]) = {
 			{.conversion = 'd', .treat = treat_f_number},//done
 			{.conversion = 'o', .treat = treat_f_number},
 			{.conversion = 'u', .treat = treat_f_number},
 			{.conversion = 'x', .treat = treat_f_number},
 			{.conversion = 'b', .treat = treat_f_number},//!!!!!!!!!!!
 			{.conversion = 'r', .treat = treat_f_string},//!!!!!!!!!!!
-			{.conversion = 'k', .treat = treat_f_date},//!!!!!!!!!!!
 			{.conversion = 'X', .treat = treat_f_number},
 			{.conversion = 'c', .treat = treat_f_char},//done
 			{.conversion = 's', .treat = treat_f_string},//done
@@ -22,7 +21,7 @@ int transform_param_conv(t_param param, va_list arg)//в заивисимост�
 	i = -1;
 	if (param.error)
 		return (0);
-	while (++i < 13)
+	while (++i < 12)
 		if (param.conversion == treat_array[i].conversion)
 			return (treat_array[i].treat(param, arg));
 	return (0);
@@ -56,12 +55,14 @@ int begin_conv(va_list arg, const char *str, int *i, int len)//выделяем 
 	}
 	param.conversion == 'i' ? param.conversion = 'd' : 0;
 	param.conversion == 'p' ? param.mode = LL : 0;
+	param.width != -2 && param.width_flag == 1 ? param.width_flag = 0 * va_arg(arg, int) : 0;
 	param.width == -2 ? param.width = va_arg(arg, int) : 0;
 	if (param.width < 0)
 	{
 		param.flags |= FLAG_MINUS;
 		param.width = -param.width;
 	}
+	//param.precision != -2 && param.prec_flag == 1 ? param.prec_flag = 0 * va_arg(arg, int) : 0;
 	param.precision == -2 ? param.precision = va_arg(arg, int) : 0;
 	param.precision < 0 && param.precision != -1 ? param.precision = -1 : 0;
 	return (transform_param_conv(param, arg));

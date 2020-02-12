@@ -9,7 +9,6 @@ int treat_conversion(t_param *param, const char *str, int *i)
 		(*i)++;
 		return (0);
 	}
-	printf("%c", str[*i]);
 	return (1);
 }
 
@@ -97,12 +96,15 @@ int treat_precision(t_param *param, const char *str, int *i)
 int			treat_width(t_param *param, const char *str, int *i)//как обрабатывать $ и * пока хз
 {
 	int width;
-	
+
+	param->width_flag = 0;
 	if (str[*i] == '*')
 	{
 		++*i;
-		width = -2;
-	} else if (ft_atoi(str, 0, &width, i))
+		ft_atoi(str, 0, &width, i);
+		width <= 0 ? width = -2 : 0;
+		param->width_flag = 1;
+	}else if (ft_atoi(str, 0, &width, i))
 		return (1);
 	param->width = width;
 	return (0);

@@ -2,7 +2,7 @@
 
 int treat_f_number_d(t_param param, va_list arg) {
 	char sign_flag;
-	__intmax_t n;
+	intmax_t n;
 	char *str;
 	
 	sign_flag = 0;
@@ -11,7 +11,7 @@ int treat_f_number_d(t_param param, va_list arg) {
 	else if (param.mode == LL)
 		n = va_arg(arg, long long);
 	else if (param.mode == J)
-		n = va_arg(arg, __intmax_t);
+		n = va_arg(arg, intmax_t);
 	else if (param.mode == Z)
 		n = va_arg(arg, ssize_t); // уточнить не size_t случаем!!!!!!!!!!!!!!!!!!!
 	else
@@ -27,7 +27,7 @@ int treat_f_number_d(t_param param, va_list arg) {
 
 int treat_f_number(t_param param, va_list arg)
 {
-	__uintmax_t n;
+	uintmax_t n;
 	
 	if (param.conversion == 'd')
 		return(treat_f_number_d(param, arg));
@@ -36,7 +36,7 @@ int treat_f_number(t_param param, va_list arg)
 	else if (param.mode == LL)
 		n = va_arg(arg, unsigned long long);
 	else if (param.mode == J)
-		n = va_arg(arg, __uintmax_t);
+		n = va_arg(arg, uintmax_t);
 	else if (param.mode == Z)
 		n = va_arg(arg, ssize_t);
 	else
@@ -91,11 +91,6 @@ int treat_f_percent(t_param param, va_list arg)
 	if ((param.flags & FLAG_MINUS) == 0)
 		return(repeat_write(a, param.width - 1) + pf_write("%",1,0)); //  В оригинальном принтф получить сдвиг процента не получилось, но реализация все равное такая, т.к. вывод совпал с чуваком с гита + хер знает, зачем такую
 	return(pf_write("%",1,0) + repeat_write(a, param.width - 1));//парашу выводить, но мб кто-то додумался и до таких тестов
-}
-
-int treat_f_date(t_param param, va_list arg)
-{
-
 }
 
 double multiplication(double num, int *size)

@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 
 inline extern int			pf_is_conversion(char c)
 {
-	return (ft_strchr("diouxXcspfbrk%", c) != NULL);
+	return (ft_strchr("diouxXcspbrk%", c) != NULL);
 }
 
 inline extern int			pf_is_modifier(char c)

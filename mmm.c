@@ -7,14 +7,12 @@
 int main()
 {
 	int l1,l2;
-	char str[10] = "a\t\adfafsdf";
-	
-	char *str1=NULL;
-	//l1 = printf("111%.100s\n", str);
-	//l2 = ft_printf("111%100s\n", str);
-	l2 = ft_printf("%10r", str);
-	printf("\nl1 = %d, l2 = %d", l1, l2);
-	//printf("%llf", 1.1l);
+
+	ft_printf("%-05");
+	//ft_printf("% h");
+	//printf("%.o|%-.o|%#.o|%0.o\n", 0U, 0U, 0U, 0U);
+	//ft_printf("%.o|%-.o|%#.o|%0.o", 0U, 0U, 0U, 0U);
+	//printf("\nl1 = %d, l2 = %d", l1, l2);
 	return 0;
 }
 

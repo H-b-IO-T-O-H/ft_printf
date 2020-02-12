@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/vlad/Загрузки/clion-2019.3.1/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Users/bjuice/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /home/vlad/Загрузки/clion-2019.3.1/bin/cmake/linux/bin/cmake -E remove -f
+RM = /Users/bjuice/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vlad/CLionProjects/ft_printf
+CMAKE_SOURCE_DIR = /Users/bjuice/new
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vlad/CLionProjects/ft_printf/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/bjuice/new/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/printf_new.dir/depend.make
@@ -59,107 +59,107 @@ include CMakeFiles/printf_new.dir/flags.make
 
 CMakeFiles/printf_new.dir/srcs/ft_printf.c.o: CMakeFiles/printf_new.dir/flags.make
 CMakeFiles/printf_new.dir/srcs/ft_printf.c.o: ../srcs/ft_printf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vlad/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/printf_new.dir/srcs/ft_printf.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/srcs/ft_printf.c.o   -c /home/vlad/CLionProjects/ft_printf/srcs/ft_printf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bjuice/new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/printf_new.dir/srcs/ft_printf.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/srcs/ft_printf.c.o   -c /Users/bjuice/new/srcs/ft_printf.c
 
 CMakeFiles/printf_new.dir/srcs/ft_printf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/printf_new.dir/srcs/ft_printf.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vlad/CLionProjects/ft_printf/srcs/ft_printf.c > CMakeFiles/printf_new.dir/srcs/ft_printf.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bjuice/new/srcs/ft_printf.c > CMakeFiles/printf_new.dir/srcs/ft_printf.c.i
 
 CMakeFiles/printf_new.dir/srcs/ft_printf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/printf_new.dir/srcs/ft_printf.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vlad/CLionProjects/ft_printf/srcs/ft_printf.c -o CMakeFiles/printf_new.dir/srcs/ft_printf.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bjuice/new/srcs/ft_printf.c -o CMakeFiles/printf_new.dir/srcs/ft_printf.c.s
 
 CMakeFiles/printf_new.dir/srcs/check.c.o: CMakeFiles/printf_new.dir/flags.make
 CMakeFiles/printf_new.dir/srcs/check.c.o: ../srcs/check.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vlad/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/printf_new.dir/srcs/check.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/srcs/check.c.o   -c /home/vlad/CLionProjects/ft_printf/srcs/check.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bjuice/new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/printf_new.dir/srcs/check.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/srcs/check.c.o   -c /Users/bjuice/new/srcs/check.c
 
 CMakeFiles/printf_new.dir/srcs/check.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/printf_new.dir/srcs/check.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vlad/CLionProjects/ft_printf/srcs/check.c > CMakeFiles/printf_new.dir/srcs/check.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bjuice/new/srcs/check.c > CMakeFiles/printf_new.dir/srcs/check.c.i
 
 CMakeFiles/printf_new.dir/srcs/check.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/printf_new.dir/srcs/check.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vlad/CLionProjects/ft_printf/srcs/check.c -o CMakeFiles/printf_new.dir/srcs/check.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bjuice/new/srcs/check.c -o CMakeFiles/printf_new.dir/srcs/check.c.s
 
 CMakeFiles/printf_new.dir/srcs/func.c.o: CMakeFiles/printf_new.dir/flags.make
 CMakeFiles/printf_new.dir/srcs/func.c.o: ../srcs/func.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vlad/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/printf_new.dir/srcs/func.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/srcs/func.c.o   -c /home/vlad/CLionProjects/ft_printf/srcs/func.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bjuice/new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/printf_new.dir/srcs/func.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/srcs/func.c.o   -c /Users/bjuice/new/srcs/func.c
 
 CMakeFiles/printf_new.dir/srcs/func.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/printf_new.dir/srcs/func.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vlad/CLionProjects/ft_printf/srcs/func.c > CMakeFiles/printf_new.dir/srcs/func.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bjuice/new/srcs/func.c > CMakeFiles/printf_new.dir/srcs/func.c.i
 
 CMakeFiles/printf_new.dir/srcs/func.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/printf_new.dir/srcs/func.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vlad/CLionProjects/ft_printf/srcs/func.c -o CMakeFiles/printf_new.dir/srcs/func.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bjuice/new/srcs/func.c -o CMakeFiles/printf_new.dir/srcs/func.c.s
 
 CMakeFiles/printf_new.dir/srcs/ft_itoa.c.o: CMakeFiles/printf_new.dir/flags.make
 CMakeFiles/printf_new.dir/srcs/ft_itoa.c.o: ../srcs/ft_itoa.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vlad/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/printf_new.dir/srcs/ft_itoa.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/srcs/ft_itoa.c.o   -c /home/vlad/CLionProjects/ft_printf/srcs/ft_itoa.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bjuice/new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/printf_new.dir/srcs/ft_itoa.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/srcs/ft_itoa.c.o   -c /Users/bjuice/new/srcs/ft_itoa.c
 
 CMakeFiles/printf_new.dir/srcs/ft_itoa.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/printf_new.dir/srcs/ft_itoa.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vlad/CLionProjects/ft_printf/srcs/ft_itoa.c > CMakeFiles/printf_new.dir/srcs/ft_itoa.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bjuice/new/srcs/ft_itoa.c > CMakeFiles/printf_new.dir/srcs/ft_itoa.c.i
 
 CMakeFiles/printf_new.dir/srcs/ft_itoa.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/printf_new.dir/srcs/ft_itoa.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vlad/CLionProjects/ft_printf/srcs/ft_itoa.c -o CMakeFiles/printf_new.dir/srcs/ft_itoa.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bjuice/new/srcs/ft_itoa.c -o CMakeFiles/printf_new.dir/srcs/ft_itoa.c.s
 
 CMakeFiles/printf_new.dir/srcs/treatment.c.o: CMakeFiles/printf_new.dir/flags.make
 CMakeFiles/printf_new.dir/srcs/treatment.c.o: ../srcs/treatment.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vlad/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/printf_new.dir/srcs/treatment.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/srcs/treatment.c.o   -c /home/vlad/CLionProjects/ft_printf/srcs/treatment.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bjuice/new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/printf_new.dir/srcs/treatment.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/srcs/treatment.c.o   -c /Users/bjuice/new/srcs/treatment.c
 
 CMakeFiles/printf_new.dir/srcs/treatment.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/printf_new.dir/srcs/treatment.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vlad/CLionProjects/ft_printf/srcs/treatment.c > CMakeFiles/printf_new.dir/srcs/treatment.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bjuice/new/srcs/treatment.c > CMakeFiles/printf_new.dir/srcs/treatment.c.i
 
 CMakeFiles/printf_new.dir/srcs/treatment.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/printf_new.dir/srcs/treatment.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vlad/CLionProjects/ft_printf/srcs/treatment.c -o CMakeFiles/printf_new.dir/srcs/treatment.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bjuice/new/srcs/treatment.c -o CMakeFiles/printf_new.dir/srcs/treatment.c.s
 
 CMakeFiles/printf_new.dir/srcs/treat_f.c.o: CMakeFiles/printf_new.dir/flags.make
 CMakeFiles/printf_new.dir/srcs/treat_f.c.o: ../srcs/treat_f.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vlad/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/printf_new.dir/srcs/treat_f.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/srcs/treat_f.c.o   -c /home/vlad/CLionProjects/ft_printf/srcs/treat_f.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bjuice/new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/printf_new.dir/srcs/treat_f.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/srcs/treat_f.c.o   -c /Users/bjuice/new/srcs/treat_f.c
 
 CMakeFiles/printf_new.dir/srcs/treat_f.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/printf_new.dir/srcs/treat_f.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vlad/CLionProjects/ft_printf/srcs/treat_f.c > CMakeFiles/printf_new.dir/srcs/treat_f.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bjuice/new/srcs/treat_f.c > CMakeFiles/printf_new.dir/srcs/treat_f.c.i
 
 CMakeFiles/printf_new.dir/srcs/treat_f.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/printf_new.dir/srcs/treat_f.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vlad/CLionProjects/ft_printf/srcs/treat_f.c -o CMakeFiles/printf_new.dir/srcs/treat_f.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bjuice/new/srcs/treat_f.c -o CMakeFiles/printf_new.dir/srcs/treat_f.c.s
 
 CMakeFiles/printf_new.dir/srcs/write_func.c.o: CMakeFiles/printf_new.dir/flags.make
 CMakeFiles/printf_new.dir/srcs/write_func.c.o: ../srcs/write_func.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vlad/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/printf_new.dir/srcs/write_func.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/srcs/write_func.c.o   -c /home/vlad/CLionProjects/ft_printf/srcs/write_func.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bjuice/new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/printf_new.dir/srcs/write_func.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/srcs/write_func.c.o   -c /Users/bjuice/new/srcs/write_func.c
 
 CMakeFiles/printf_new.dir/srcs/write_func.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/printf_new.dir/srcs/write_func.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vlad/CLionProjects/ft_printf/srcs/write_func.c > CMakeFiles/printf_new.dir/srcs/write_func.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bjuice/new/srcs/write_func.c > CMakeFiles/printf_new.dir/srcs/write_func.c.i
 
 CMakeFiles/printf_new.dir/srcs/write_func.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/printf_new.dir/srcs/write_func.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vlad/CLionProjects/ft_printf/srcs/write_func.c -o CMakeFiles/printf_new.dir/srcs/write_func.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bjuice/new/srcs/write_func.c -o CMakeFiles/printf_new.dir/srcs/write_func.c.s
 
 CMakeFiles/printf_new.dir/mmm.c.o: CMakeFiles/printf_new.dir/flags.make
 CMakeFiles/printf_new.dir/mmm.c.o: ../mmm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vlad/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/printf_new.dir/mmm.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/mmm.c.o   -c /home/vlad/CLionProjects/ft_printf/mmm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bjuice/new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/printf_new.dir/mmm.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf_new.dir/mmm.c.o   -c /Users/bjuice/new/mmm.c
 
 CMakeFiles/printf_new.dir/mmm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/printf_new.dir/mmm.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vlad/CLionProjects/ft_printf/mmm.c > CMakeFiles/printf_new.dir/mmm.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bjuice/new/mmm.c > CMakeFiles/printf_new.dir/mmm.c.i
 
 CMakeFiles/printf_new.dir/mmm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/printf_new.dir/mmm.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vlad/CLionProjects/ft_printf/mmm.c -o CMakeFiles/printf_new.dir/mmm.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bjuice/new/mmm.c -o CMakeFiles/printf_new.dir/mmm.c.s
 
 # Object files for target printf_new
 printf_new_OBJECTS = \
@@ -185,7 +185,7 @@ printf_new: CMakeFiles/printf_new.dir/srcs/write_func.c.o
 printf_new: CMakeFiles/printf_new.dir/mmm.c.o
 printf_new: CMakeFiles/printf_new.dir/build.make
 printf_new: CMakeFiles/printf_new.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vlad/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable printf_new"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bjuice/new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable printf_new"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/printf_new.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -198,6 +198,6 @@ CMakeFiles/printf_new.dir/clean:
 .PHONY : CMakeFiles/printf_new.dir/clean
 
 CMakeFiles/printf_new.dir/depend:
-	cd /home/vlad/CLionProjects/ft_printf/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vlad/CLionProjects/ft_printf /home/vlad/CLionProjects/ft_printf /home/vlad/CLionProjects/ft_printf/cmake-build-debug /home/vlad/CLionProjects/ft_printf/cmake-build-debug /home/vlad/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/printf_new.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/bjuice/new/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/bjuice/new /Users/bjuice/new /Users/bjuice/new/cmake-build-debug /Users/bjuice/new/cmake-build-debug /Users/bjuice/new/cmake-build-debug/CMakeFiles/printf_new.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/printf_new.dir/depend
 
