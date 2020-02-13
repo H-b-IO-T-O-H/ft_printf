@@ -56,8 +56,8 @@ typedef struct s_for_itoa
 	int i;
 	int j;
 	int k;
-	uintmax_t buf;
-	uintmax_t nb;
+	__uintmax_t buf;
+	__uintmax_t nb;
 } t_for_itoa;
 
 int ft_printf(const char *format, ...);
@@ -69,8 +69,8 @@ int		pf_is_flag(char c);
 int		pf_is_precision(char c);
 int		pf_is_valid(char c);
 int		pf_isdigit(int c);
-int		ft_itoa(t_param param, intmax_t nb, char sign);
-int     ft_uitoa(t_param param, uintmax_t nb);
+int		ft_itoa(t_param param, __intmax_t nb, char sign);
+int     ft_uitoa(t_param param, __uintmax_t nb);
 int		repeat_write(char c, int n);
 int		pf_write(char *str, int len, int flag);
 int		ft_strlen(const char *s);

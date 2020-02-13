@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Users/bjuice/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /home/vlad/Загрузки/clion-2019.3.1/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Users/bjuice/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /home/vlad/Загрузки/clion-2019.3.1/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/bjuice/new
+CMAKE_SOURCE_DIR = /home/vlad/CLionProjects/ft_printf
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/bjuice/new/cmake-build-debug
+CMAKE_BINARY_DIR = /home/vlad/CLionProjects/ft_printf/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/bjuice/new/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Users/bjuice/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/vlad/Загрузки/clion-2019.3.1/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Users/bjuice/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/vlad/Загрузки/clion-2019.3.1/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bjuice/new/cmake-build-debug/CMakeFiles /Users/bjuice/new/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vlad/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles /home/vlad/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bjuice/new/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vlad/CLionProjects/ft_printf/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -176,6 +176,33 @@ srcs/check.s: srcs/check.c.s
 srcs/check.c.s:
 	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/check.c.s
 .PHONY : srcs/check.c.s
+
+srcs/float.o: srcs/float.c.o
+
+.PHONY : srcs/float.o
+
+# target to build an object file
+srcs/float.c.o:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/float.c.o
+.PHONY : srcs/float.c.o
+
+srcs/float.i: srcs/float.c.i
+
+.PHONY : srcs/float.i
+
+# target to preprocess a source file
+srcs/float.c.i:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/float.c.i
+.PHONY : srcs/float.c.i
+
+srcs/float.s: srcs/float.c.s
+
+.PHONY : srcs/float.s
+
+# target to generate assembly for a file
+srcs/float.c.s:
+	$(MAKE) -f CMakeFiles/printf_new.dir/build.make CMakeFiles/printf_new.dir/srcs/float.c.s
+.PHONY : srcs/float.c.s
 
 srcs/ft_itoa.o: srcs/ft_itoa.c.o
 
@@ -346,14 +373,17 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... printf_new"
+	@echo "... edit_cache"
 	@echo "... mmm.o"
 	@echo "... mmm.i"
 	@echo "... mmm.s"
 	@echo "... srcs/check.o"
 	@echo "... srcs/check.i"
 	@echo "... srcs/check.s"
+	@echo "... srcs/float.o"
+	@echo "... srcs/float.i"
+	@echo "... srcs/float.s"
 	@echo "... srcs/ft_itoa.o"
 	@echo "... srcs/ft_itoa.i"
 	@echo "... srcs/ft_itoa.s"

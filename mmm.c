@@ -8,7 +8,7 @@ int main()
 {
 	int l1,l2;
 
-	ft_printf("%-05");
+	ft_printf("%d",10);
 	//ft_printf("% h");
 	//printf("%.o|%-.o|%#.o|%0.o\n", 0U, 0U, 0U, 0U);
 	//ft_printf("%.o|%-.o|%#.o|%0.o", 0U, 0U, 0U, 0U);

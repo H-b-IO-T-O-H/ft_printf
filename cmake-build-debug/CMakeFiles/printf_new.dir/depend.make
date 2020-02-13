@@ -7,6 +7,9 @@ CMakeFiles/printf_new.dir/mmm.c.o: ../mmm.c
 CMakeFiles/printf_new.dir/srcs/check.c.o: ../includes/ft_printf.h
 CMakeFiles/printf_new.dir/srcs/check.c.o: ../srcs/check.c
 
+CMakeFiles/printf_new.dir/srcs/float.c.o: ../includes/ft_printf.h
+CMakeFiles/printf_new.dir/srcs/float.c.o: ../srcs/float.c
+
 CMakeFiles/printf_new.dir/srcs/ft_itoa.c.o: ../includes/ft_printf.h
 CMakeFiles/printf_new.dir/srcs/ft_itoa.c.o: ../srcs/ft_itoa.c
 

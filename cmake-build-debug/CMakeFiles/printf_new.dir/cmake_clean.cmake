@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/printf_new.dir/mmm.c.o"
   "CMakeFiles/printf_new.dir/srcs/check.c.o"
+  "CMakeFiles/printf_new.dir/srcs/float.c.o"
   "CMakeFiles/printf_new.dir/srcs/ft_itoa.c.o"
   "CMakeFiles/printf_new.dir/srcs/ft_printf.c.o"
   "CMakeFiles/printf_new.dir/srcs/func.c.o"
