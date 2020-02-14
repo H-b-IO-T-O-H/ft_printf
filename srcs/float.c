@@ -49,7 +49,7 @@ int handle_decimals(char **str, int *i, long double num, int precision) {
 		ac = 0.5;
 	else
 		(*str)[(*i)++] = '.';
-	while (k <= precision) {
+	while (k <= precision + 1) {
 		if (k == precision + 1)
 		{
 			if ((int)(num)  >= 5)
@@ -100,7 +100,6 @@ int float_to_str(char **str, long double num, int precision, int neg)
 {
 	int size;
 	long int multipl;
-	char *tmp_str;
 	int i;
 	
 	i = 0;
@@ -113,15 +112,13 @@ int float_to_str(char **str, long double num, int precision, int neg)
 	}
 	multipl = multiplication(num, &size); // считаем сколько степеней 10ки в целой части
 	size += precision + 1;
-	if (!(tmp_str = malloc(sizeof(char)*(size))))
+	if (!(*str = malloc(sizeof(char)*(size))))
 		return(0);
-	if (neg)
-		tmp_str[i++] = '-';
-	handle_integer(&num, &tmp_str, &i, multipl); // записываем в tmp_str целую часть num с точкой, остается 0.(дробная часть)
-	if ((neg = handle_decimals(&tmp_str, &i, num, precision)) != -2)
-		rounding(&tmp_str, neg, size - precision + neg);
-	tmp_str[i] = '\0';
-	*str = tmp_str;
+	neg ? (*str)[i++] = '-' : 0;
+	handle_integer(&num, str, &i, multipl); // записываем в tmp_str целую часть num с точкой, остается 0.(дробная часть)
+	if ((neg = handle_decimals(str, &i, num, precision)) != -2)
+		rounding(str, neg, size - precision + neg);
+	(*str)[i] = '\0';
 	return (size);
 }
 
@@ -131,10 +128,9 @@ int treat_f_float(t_param param, va_list arg)
 	int size;
 	int neg;
 	
-	if (param.precision < 0)
-		param.precision = 6;
+	param.precision < 0 ? param.precision = 6 : 0;
 	neg = 0;
 	size = float_to_str(&str, va_arg(arg,double), param.precision, neg);
-	printf("%s      ", str);
+	write(1, str, size);
 	return (size);
 }
