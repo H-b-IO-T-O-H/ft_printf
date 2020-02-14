@@ -53,7 +53,7 @@ int handle_decimals(char **str, int *i, long double num, int precision) {
 		if (k == precision + 1)
 		{
 			if ((int)(num)  >= 5)
-				return (*i -1);
+				return (*i - 1);
 			return (-2);
 		}
 		if ((num >= 0 && k <= precision) || (num < 0 && k <= precision)) {
@@ -95,14 +95,47 @@ void rounding(char **temp_str, int i)
 	}
 }
 
-int float_to_str(char **str, long double num, int precision)
+int create_str_put_flags(char **str, t_param param, int *size, int neg) {
+	int i;
+	int size_num;
+	char flag;
+	
+	i = -1;
+	size_num = *size - neg;
+	((param.flags & FLAG_PLUS || param.flags & FLAG_SPACE) && !neg) ? ++(*size) : 0;
+	flag = (param.flags & FLAG_SPACE ? ' ' : 0);
+	flag = (param.flags & FLAG_PLUS ? '+' : 0);
+	neg ? flag = '-' : 0;
+	if (param.width > *size)
+		*size = param.width;
+	if (!(*str = malloc(sizeof(char)*(*size + 1))))
+		return(-1);
+	if (param.flags & FLAG_MINUS)
+	{
+		if (flag)
+			(*str)[++i] = flag;
+		i = size_num + (flag != 0);
+		while (i < *size)
+			(*str)[i++] =  ' ';
+		(*str)[i] = '\0';
+		i = (flag ? 1 : 0);
+	}
+	else {
+		while (++i < *size - size_num)
+			(*str)[i] = (char) (param.flags & FLAG_ZERO ? '0' : ' ');
+		if (flag)
+			param.flags & FLAG_ZERO ? (*str)[0] = flag : ((*str)[*size - size_num - 1] = flag);
+	}
+	return (i);
+}
+
+int float_to_str(char **str, long double num, int precision, t_param param)
 {
 	int size;
 	long int multipl;
 	int i;
 	int neg;
 	
-	i = 0;
 	neg = 0;
 	size = 1;
 	if (num < 0 || (1/num == -INFINITY))
@@ -112,16 +145,16 @@ int float_to_str(char **str, long double num, int precision)
 		num = -num;//danger
 	}
 	multipl = multiplication(num, &size); // считаем сколько степеней 10ки в целой части
-	size += precision + 1;
-	if (!(*str = malloc(sizeof(char)*(size))))
-		return(0);
-	neg ? (*str)[i++] = '-' : 0;
+	size += precision + (param.precision > 0);
+	if ((i = create_str_put_flags(str, param, &size, neg))== -1)
+		return (0);
 	handle_integer(&num, str, &i, multipl); // записываем в tmp_str целую часть num с точкой, остается 0.(дробная часть)
+	param.flags & FLAG_HASH && param.precision <= 0 ? (*str)[i++] = '.' : 0;
 	if ((neg = handle_decimals(str, &i, num, precision)) != -2)
 		rounding(str, neg);
-	(*str)[i] = '\0';
 	return (size);
 }
+
 
 int treat_f_float(t_param param, va_list arg)
 {
@@ -131,7 +164,8 @@ int treat_f_float(t_param param, va_list arg)
 	
 	param.precision < 0 ? param.precision = 6 : 0;
 	param.mode == LL ? nb = va_arg(arg, long double) : (nb = va_arg(arg, double));
-	size = float_to_str(&str, nb, param.precision);
+	size = float_to_str(&str, nb, param.precision, param);
 	write(1, str, size);
+	//free(str);
 	return (size);
 }

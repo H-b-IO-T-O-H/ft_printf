@@ -18,9 +18,9 @@ unistd.h
 limits.h
 -
 
-/home/vlad/CLionProjects/ft_printf/srcs/float.c
-math.h
+/home/vlad/CLionProjects/ft_printf/mmm.c
+float.h
 -
-../includes/ft_printf.h
+includes/ft_printf.h
 /home/vlad/CLionProjects/ft_printf/includes/ft_printf.h
 

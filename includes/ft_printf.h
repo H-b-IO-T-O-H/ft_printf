@@ -15,6 +15,16 @@
 # define FLAG_SPACE 16
 # define FLAG_APOSTROPHE 32
 
+
+
+typedef struct s_float
+{
+	long double				value;
+			int				exp;
+			int				sign;
+			int				size;
+}              t_float;
+
 typedef struct	s_string
 {
 	const char	*str;
