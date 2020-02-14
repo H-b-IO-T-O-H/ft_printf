@@ -10,12 +10,12 @@ int main()
 
 	//ft_printf("%d",10);
 	int i = -1;
-	int ar = 4;
-	double k = 0.60015000;
-	while (++i < 20)
+	int ar = 22;
+	long double k = -0.60015000l;
+	while (++i < 1)
 	{
-		printf("\n    printf = %.*f",ar, k);
-		ft_printf("ft = %.*f", ar,k);
+		printf("\n  do = %Lf  printf = %.*Lf",k,ar, k);
+		ft_printf("ft = %.*Lf", ar,k);
 		k+=0.1;
 	}
 	//ft_printf("%.2f\n", 1.215);

@@ -76,7 +76,7 @@ int handle_decimals(char **str, int *i, long double num, int precision) {
 	return (-2);
 }
 
-void rounding(char **temp_str, int i, int size_int)
+void rounding(char **temp_str, int i)
 {
 	int j;
 	char *str;
@@ -84,31 +84,32 @@ void rounding(char **temp_str, int i, int size_int)
 	str = *temp_str;
 	if (i < 0)
 		return ;
-	if (str[i] == '.')
-		--i;
+	str[i] == '.' ? --i : 0;
 	j = (int)(str[i] - '0');
 	if (j != 9)
 		str[i] = (char)((int)(str[i] - '0') + 1 + '0');
 	else
 	{
 		str[i] = '0';
-		rounding(temp_str, i - 1, size_int);
+		rounding(temp_str, i - 1);
 	}
 }
 
-int float_to_str(char **str, long double num, int precision, int neg)
+int float_to_str(char **str, long double num, int precision)
 {
 	int size;
 	long int multipl;
 	int i;
+	int neg;
 	
 	i = 0;
+	neg = 0;
 	size = 1;
 	if (num < 0 || (1/num == -INFINITY))
 	{
 		size++;
 		neg = 1;
-		num = -num;
+		num = -num;//danger
 	}
 	multipl = multiplication(num, &size); // считаем сколько степеней 10ки в целой части
 	size += precision + 1;
@@ -117,7 +118,7 @@ int float_to_str(char **str, long double num, int precision, int neg)
 	neg ? (*str)[i++] = '-' : 0;
 	handle_integer(&num, str, &i, multipl); // записываем в tmp_str целую часть num с точкой, остается 0.(дробная часть)
 	if ((neg = handle_decimals(str, &i, num, precision)) != -2)
-		rounding(str, neg, size - precision + neg);
+		rounding(str, neg);
 	(*str)[i] = '\0';
 	return (size);
 }
@@ -125,12 +126,12 @@ int float_to_str(char **str, long double num, int precision, int neg)
 int treat_f_float(t_param param, va_list arg)
 {
 	char *str;
+	long double nb;
 	int size;
-	int neg;
 	
 	param.precision < 0 ? param.precision = 6 : 0;
-	neg = 0;
-	size = float_to_str(&str, va_arg(arg,double), param.precision, neg);
+	param.mode == LL ? nb = va_arg(arg, long double) : (nb = va_arg(arg, double));
+	size = float_to_str(&str, nb, param.precision);
 	write(1, str, size);
 	return (size);
 }
