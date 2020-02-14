@@ -4,6 +4,7 @@ SRC = ft_itoa.c \
     treat_f.c \
     treatment.c \
     write_func.c \
+    float.c \
     check.c \
 
 OBJ = $(SRC:.c=.o)

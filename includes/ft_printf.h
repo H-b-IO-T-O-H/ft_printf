@@ -83,6 +83,7 @@ int		ft_itoa(t_param param, __intmax_t nb, char sign);
 int     ft_uitoa(t_param param, __uintmax_t nb);
 int		repeat_write(char c, int n);
 int		pf_write(char *str, int len, int flag);
+void ft_putchar(char c);
 int		ft_strlen(const char *s);
 
 int treat_conversion(t_param *param, const char *str, int *i);

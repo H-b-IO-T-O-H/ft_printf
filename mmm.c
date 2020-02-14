@@ -12,9 +12,10 @@ int main()
 	//ft_printf("%d",10);
 	int i = -1;
 	int ar = 5;
+
 	//printf("%.1000Lf\n\n", LDBL_MAX);
-	ft_printf("%Lf\n\n", LDBL_MAX);
-	
+	ft_printf("%+#-10.4Lf\n\n",  -LDBL_MAX);
+	printf("%+#-10.4Lf\n\n",  -LDBL_MIN);
 	
 	return 0;
 }
