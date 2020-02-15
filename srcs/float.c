@@ -1,24 +1,31 @@
-#include <math.h>
 #include "../includes/ft_printf.h"
 
-int multiplication(long double *num, int *size)
+int multiplication(long double *num, int *size, int *flag)
 {
-	*size = (!(int)*num ? 1 : 0);
+	int multipl;
+	
+	*size = 1;
+	multipl = 0;
+	*flag = ((int)*num == 0 ? 1 : 0); //flag == 1 pri num == 0
 	while ((int)*num != 0)
 	{
 		(*size)++;
 		*num /= 10;
+		++multipl;
 	}
-	return (*size);
+	*size > 1 ? --*size : 0;
+	return (multipl);
 }
 
 
 
-void handle_integer(long double *num, char **str, int *i, int multipl)
+void handle_integer(long double *num, char **str, int *i, int multipl, int flag)
 {
+	!multipl? multipl += 1 + *i : (multipl += *i);
 	while (*i < multipl)
 	{
-		*num *= 10;
+		if (!flag)
+			*num *= 10;
 		(*str)[(*i)++] = (char)((int)(*num) + '0');
 		*num -= (int)*num;
 	}
@@ -37,6 +44,7 @@ int handle_decimals(char **str, int *i, long double num, int precision) {
 	k = 1;
 	if (precision <= 0)
 		ac = 0.5;
+	num*=10;
 	while (k <= precision + 1) {
 		if (k == precision + 1)
 		{
@@ -64,22 +72,62 @@ int handle_decimals(char **str, int *i, long double num, int precision) {
 	return (-2);
 }
 
-void rounding(char **temp_str, int i)
+int re_alloc(char *str, char c, int i, int size)
 {
+	char *tmp_str;
 	int j;
-	char *str;
 	
-	str = *temp_str;
-	if (i < 0)
+	if (!(tmp_str = (char *)malloc(size)))
+		return (-1);
+	tmp_str[size] = '\0';
+	j = -1;
+	if (c == '1') {
+		tmp_str[++j] = c;
+		while (++i < size)
+			tmp_str[++j] = str[i];
+	}
+	else {
+		while (++j < i)
+			tmp_str[j] = str[j];
+		if (c != '0' && c != ' ')
+		{
+			j > 0 ? --j : 0;
+			tmp_str[j] = c;
+			tmp_str[++j] = '1';
+		}
+		else
+			tmp_str[j] = '1';
+		while (i++ < size)
+			tmp_str[++j] = str[i];
+	}
+	free(str);
+	write(1, tmp_str, j);
+	free(tmp_str);
+	return (j);
+}
+
+void rounding(t_float *b)
+{
+	static int count = 1;
+	static char *str;
+	
+	str = *b->str;
+	if (b->j < -1)
 		return ;
-	str[i] == '.' ? --i : 0;
-	j = (int)(str[i] - '0');
-	if (j != 9)
-		str[i] = (char)((int)(str[i] - '0') + 1 + '0');
+	if ((count == b->num_size && b->precision != 0) || (count == b->num_size + 1 && b->precision == 0))
+	{
+		b->size == b->num_size ? b->size++  : 0;
+		b->size = re_alloc(str, (b->j != -1 ? str[b->j] : '1'), b->j, b->size);
+	}
+	str[b->j] == '.' ? --b->j : 0;
+	if ((int)(str[b->j] - '0')!= 9)
+		str[b->j] = (char)((int)(str[b->j] - '0') + 1 + '0');
 	else
 	{
-		str[i] = '0';
-		rounding(temp_str, i - 1);
+		str[b->j] = '0';
+		++count;
+		b->j -=1;
+		rounding(b);
 	}
 }
 
@@ -89,9 +137,12 @@ int create_str_put_flags(char **str, t_param param, int *size, int neg) {
 	char flag;
 	
 	i = -1;
+	flag = 0;
 	((param.flags & FLAG_PLUS || param.flags & FLAG_SPACE) && !neg) ? ++(*size) : 0;
-	flag = (param.flags & FLAG_SPACE ? ' ' : 0);
-	flag = (param.flags & FLAG_PLUS ? '+' : 0);
+	if (param.flags & FLAG_SPACE)
+		flag = ' ';
+	if (param.flags & FLAG_PLUS)
+		flag = '+';
 	neg ? flag = '-' : 0;
 	size_num = *size;
 	if (param.width > *size)
@@ -111,10 +162,15 @@ int create_str_put_flags(char **str, t_param param, int *size, int neg) {
 		i = (flag ? 1 : 0);
 	}
 	else {
-		while (++i < *size - size_num)
-			(*str)[i] = (char) (param.flags & FLAG_ZERO ? '0' : ' ');
+		neg = (++i < *size - size_num ? 1 : 0);
+		if (neg)
+		{
+			while (i <= *size - size_num)
+				(*str)[i++] = (char) (param.flags & FLAG_ZERO ? '0' : ' ');
+			--i;
+		}
 		if (flag) {
-			param.flags & FLAG_ZERO ? (*str)[i] = flag : ((*str)[*size - size_num] = flag);
+			param.flags & FLAG_ZERO ? (*str)[0] = flag : ((*str)[*size - size_num] = flag);
 			++i;
 		}
 	}
@@ -123,28 +179,28 @@ int create_str_put_flags(char **str, t_param param, int *size, int neg) {
 
 int float_to_str(char **str, long double num, t_param param)
 {
-	int size;
-	int multipl;
-	int i;
-	int neg;
+	t_float b;
 	
-	neg = 0;
-	multipl = multiplication(&num, &size);
-	if (num < 0 || (1/num == -INFINITY))
+	b.neg = 0;
+	b.multipl = multiplication(&num, &b.size, &b.flag);
+	if (num < 0)
 	{
-		size++;
-		neg = 1;
+		b.size++;
+		b.neg = 1;
 		num = -num;//danger
 	}
-	size += param.precision + (param.precision > 0) + (!param.precision && param.flags & FLAG_HASH);
-	if ((i = create_str_put_flags(str, param, &size, neg))== -1)
+	b.str = str;
+	b.size +=  param.precision + (param.precision > 0) + (!param.precision && param.flags & FLAG_HASH);
+	b.precision = param.precision;
+	b.num_size = b.size - b.neg;
+	if ((b.i = create_str_put_flags(b.str, param, &b.size, b.neg))== -1)
 		return (0);
-	handle_integer(&num, str, &i, multipl + i);
-	param.flags & FLAG_HASH && param.precision <= 0 ? (*str)[i++] = '.' : 0;
-	param.precision > 0 ? (*str)[i++] = '.' : 0;
-	if ((neg = handle_decimals(str, &i, num, param.precision)) != -2)
-		rounding(str, neg);
-	return (size);
+	handle_integer(&num, b.str, &b.i, b.multipl, b.flag);
+	param.flags & FLAG_HASH && param.precision <= 0 ? (*b.str)[b.i++] = '.' : 0;
+	param.precision > 0 ? (*b.str)[b.i++] = '.' : 0;
+	if ((b.j = handle_decimals(str, &b.i, num, param.precision)) != -2)
+		rounding(&b);
+	return (b.size);
 }
 
 int treat_f_float(t_param param, va_list arg)
@@ -156,7 +212,10 @@ int treat_f_float(t_param param, va_list arg)
 	param.precision < 0 ? param.precision = 6 : 0;
 	param.mode == LL ? nb = va_arg(arg, long double) : (nb = va_arg(arg, double));
 	size = float_to_str(&str, nb, param);
-	write(1, str, size);
-	free(str);
+	if (str)
+	{
+		write(1, str, size);
+		free(str);
+	}
 	return (size);
 }

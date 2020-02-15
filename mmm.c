@@ -14,9 +14,10 @@ int main()
 	int ar = 5;
 
 	//printf("%.1000Lf\n\n", LDBL_MAX);
-	ft_printf("%+#-10.4Lf\n\n",  -LDBL_MAX);
-	printf("%+#-10.4Lf\n\n",  -LDBL_MIN);
-	
+	l1 = printf("%f\n",1.e201);
+	l2 = ft_printf("%f\n",1.e201);
+	printf("\033[034m A line of text in blue");
+	printf("l1 = %d  l2 = %d", l1, l2);
 	return 0;
 }
 

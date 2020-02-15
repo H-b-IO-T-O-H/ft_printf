@@ -17,12 +17,18 @@
 
 
 
-typedef struct s_float
+typedef struct s_for_float
 {
-	long double				value;
-			int				exp;
-			int				sign;
-			int				size;
+	char **str;
+	int precision;
+	int count;
+	int size;
+	int multipl;
+	int i;
+	int num_size;
+	int j;
+	int neg;
+	int flag;
 }              t_float;
 
 typedef struct	s_string
