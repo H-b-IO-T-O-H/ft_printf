@@ -38,7 +38,7 @@ void ft_itoa_1(t_for_itoa a)
 	}
 	while (a.j < a.length)
 		a.str[a.j++] = ' ';
-	write(1,a.str,a.k);
+	pf_write(a.str, a.k, 0, a.colour);
 	free(a.str);
 }
 
@@ -55,7 +55,7 @@ void ft_itoa_2(t_for_itoa a)
 		a.flag_fill != ' ' ? a.str[0] = a.sign : (a.str[a.i - 1] = a.sign);
 	while (a.i < a.length)
 		a.str[a.i++] = '0';
-	write(1,a.str,a.k);
+	pf_write(a.str, a.k, 0, a.colour);
 	free(a.str);
 }
 
@@ -67,6 +67,7 @@ int ft_itoa(t_param param, __intmax_t nb, char sign_flag)
 	a.count = len_base(param.conversion, a.buf, &a.base);//длина числа
 	nb == 0 && !param.precision ? a.count = 0 : 0;
 	a.i = 0;
+	a.colour = param.colour;
 	param.flags & FLAG_ZERO && param.precision == -1 ? a.flag_fill = '0' : (a.flag_fill = ' ');
 	a.length = a.count;
 	a.length < param.precision ? a.length = param.precision : 0;
@@ -106,7 +107,7 @@ void ft_uitoa_1(t_for_itoa a, t_param param)
 	}
 	while (a.j < a.length)
 		a.str[a.j++] = ' ';
-	write(1,a.str,a.k);
+	pf_write(a.str, a.k, 0, a.colour);
 	free(a.str);
 }
 
@@ -134,7 +135,7 @@ void ft_uitoa_2(t_for_itoa a, t_param param)
 	if ((a.flag == 2 && a.nb) || (a.flag && param.conversion == 'p'))
 		a.str[l--] = (param.conversion == 'x' || param.conversion == 'p') ? 'x' : 'X';
 	a.flag ? a.str[l] = '0' : 0;
-	write(1,a.str,a.k);
+	pf_write(a.str, a.k, 0, a.colour);
 	free(a.str);
 }
 
@@ -146,6 +147,7 @@ int ft_uitoa(t_param param, __uintmax_t nb)
 	a.flag = 0;
 	a.i = 0;
 	a.buf = nb;
+	a.colour = param.colour;
 	if (param.flags & FLAG_HASH || param.conversion == 'p')
 		(param.conversion == 'x' || param.conversion == 'X' || param.conversion == 'p') ? a.flag = 2 : (a.flag = 1);
 	param.flags & FLAG_ZERO && param.precision == -1 ? a.flag_fill = '0' : (a.flag_fill = ' ');

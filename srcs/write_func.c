@@ -27,7 +27,30 @@ void pf_write_non_print(char *str, int len, int *countx3)
 	}
 }
 
-int			pf_write(char *str, int len, int flag)
+/*
+#define GREEN "\033[031m"
+#define BROWN "\033[031m"
+#define BLUE "\033[034m"
+#define PURPLE "\033[035m"
+#define CYAN "\033[036m"
+#define WHITE "\033[0m"*/
+
+void colour_write(char *str, int len, t_colour colour)
+{
+	colour == WHITE ? write(1,"\033[30m", 5): 0;
+	colour == RED ? write(1,"\033[031m", 6): 0;
+	colour == GREEN ? write(1,"\033[032m", 6): 0;
+	colour == YELLOW ? write(1,"\033[033m", 6): 0;
+	colour == BLUE ? write(1,"\033[034m", 6): 0;
+	colour == PURPLE ? write(1,"\033[035m", 6): 0;
+	colour == AQUA ? write(1,"\033[036m", 6): 0;
+	colour == GREEY? write(1,"\033[037m", 6): 0;
+	write(1, str, len);
+}
+
+//flag = -1 - non_print, flag == 1 -free, flag == -2 - colour +
+
+int			pf_write(char *str, int len, int flag, t_colour colour)
 {
 	int countx3;
 	
@@ -36,8 +59,10 @@ int			pf_write(char *str, int len, int flag)
 		return (0);
 	if (flag == -1)
 		pf_write_non_print(str,len, &countx3);
-	else
+	else if (colour == No)
 		write(1, str, len);
+	else
+		colour_write(str, len, colour);
 	flag == 1 ? free((void *)str) : 0;
 	return (len + 3*countx3);
 }

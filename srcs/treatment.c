@@ -109,3 +109,26 @@ int			treat_width(t_param *param, const char *str, int *i)//как обраба�
 	param->width = width;
 	return (0);
 }
+
+int treat_colour(t_param *param, const char *str, int *i)
+{
+	param->colour = No;
+	if (str[*i] != '{')
+		return (0);
+	++*i;
+	if (str[*i] == 'G')
+		param->colour = (str[*i + 4] == 'N' ? GREEN : GREEY);
+	str[*i] == 'B' ? param->colour = BLUE: 0;
+	str[*i] == 'Y' ? param->colour = YELLOW : 0;
+	str[*i] == 'A' ? param->colour = AQUA : 0;
+	str[*i] == 'R' ? param->colour = RED : 0;
+	str[*i] == 'P' ? param->colour = PURPLE : 0;
+	str[*i] == 'W' ? param->colour = WHITE : 0;
+	while (str[*i] && str[*i] != '}')
+		++*i;
+	if (str[*i] == '}')
+		++*i;
+	else
+		return (1);
+	return (0);
+}

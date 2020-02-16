@@ -29,8 +29,8 @@ int transform_param_conv(t_param param, va_list arg)//в заивисимост�
 
 int begin_conv(va_list arg, const char *str, int *i, int len)//выделяем все флаги и модификаторы после знака %
 {
-	static int (*treat_func_arr[5])(t_param *param, const char *str, int *i) = {
-			 treat_flags, treat_width, treat_precision,  treat_modifier, treat_conversion};
+	static int (*treat_func_arr[6])(t_param *param, const char *str, int *i) = {
+			treat_colour, treat_flags, treat_width, treat_precision,  treat_modifier, treat_conversion};
 	t_param param;
 	int j;
 	int start;
@@ -44,7 +44,7 @@ int begin_conv(va_list arg, const char *str, int *i, int len)//выделяем 
 	param.conversion = 0;
 	param.str.str = str;
 	param.str.len = len;
-	while (j < 5 && *i <= start + len)
+	while (j < 6 && *i <= start + len)
 	{
 		if (treat_func_arr[j](&param, str, i))
 		{
@@ -68,6 +68,16 @@ int begin_conv(va_list arg, const char *str, int *i, int len)//выделяем 
 	return (transform_param_conv(param, arg));
 }
 
+void	pf_is_colour(const char *str, int *i)
+{
+	int j;
+	
+	j = *i + 1;
+	while(str[j] && str[j] != '}')
+		++j;
+	*i = ++j;
+}
+
 int format_parser(const char *str, va_list arg)//разделяем выражение на модификаторы и обычные строчки
 {
 	int i;
@@ -83,6 +93,8 @@ int format_parser(const char *str, va_list arg)//разделяем выраже
 		if (str[i] == '%')
 		{
 			j = ++i;
+			if (str[j] == '{')
+				pf_is_colour(str, &i);
 			while ((str[i] && pf_is_valid(str[i]) && !pf_is_conversion(str[i])) || (str[i] && str[i] != '%' && pf_is_conversion(str[i])) )
 				++i;
 			str[i] == '%' ? ++i : 0;

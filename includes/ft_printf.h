@@ -15,8 +15,6 @@
 # define FLAG_SPACE 16
 # define FLAG_APOSTROPHE 32
 
-
-
 typedef struct s_for_float
 {
 	char **str;
@@ -42,10 +40,17 @@ typedef enum	e_modifier
 	NO = 0, L = 1, H = 2, J = 3, Z = 4, LL = 5, HH = 6
 }				t_modifier;
 
+typedef enum	e_colour
+{
+	No = -1, WHITE = 0, GREEN = 1, BLUE = 2, RED = 3, PURPLE = 4, GREEY = 5, YELLOW = 6, AQUA = 7
+}				t_colour;
+
+
 typedef struct	s_param
 {
 	t_string	str;
 	t_modifier	mode;
+	t_colour	colour;
 	char 		conversion;
 	char 		flags;
 	int			width;
@@ -72,6 +77,7 @@ typedef struct s_for_itoa
 	int i;
 	int j;
 	int k;
+	t_colour	colour;
 	__uintmax_t buf;
 	__uintmax_t nb;
 } t_for_itoa;
@@ -88,18 +94,18 @@ int		pf_isdigit(int c);
 int		ft_itoa(t_param param, __intmax_t nb, char sign);
 int     ft_uitoa(t_param param, __uintmax_t nb);
 int		repeat_write(char c, int n);
-int		pf_write(char *str, int len, int flag);
-void ft_putchar(char c);
+int		pf_write(char *str, int len, int flag, t_colour colour);
+void 	ft_putchar(char c);
 int		ft_strlen(const char *s);
 
 int treat_conversion(t_param *param, const char *str, int *i);
 int treat_flags(t_param *param, const char *str, int *i);
 int treat_modifier(t_param *param, const char *str, int *i);
 int treat_precision(t_param *param, const char *str, int *i);
-int			treat_width(t_param *param, const char *str, int *i);
+int treat_colour(t_param *param, const char *str, int *i);
+int	treat_width(t_param *param, const char *str, int *i);
 
 int treat_f_number(t_param param, va_list arg);
-int treat_f_date(t_param param, va_list arg);
 int treat_f_char(t_param param, va_list arg);
 int treat_f_string(t_param param, va_list arg);
 int treat_f_percent(t_param param, va_list arg);

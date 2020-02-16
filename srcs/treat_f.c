@@ -3,7 +3,6 @@
 int treat_f_number_d(t_param param, va_list arg) {
 	char sign_flag;
 	__intmax_t n;
-	char *str;
 	
 	sign_flag = 0;
 	if (param.mode == L)
@@ -56,13 +55,13 @@ int treat_f_char(t_param param, va_list arg)
 	a = param.flags & FLAG_ZERO ? '0' : ' ';
 	c = (char)va_arg(arg, int);
 	if ((param.flags & FLAG_MINUS) == 0)
-		return(repeat_write(a, param.width - 1) + pf_write(&c,1,0));
-	return(pf_write(&c,1,0) + repeat_write(a, param.width - 1));
+		return(repeat_write(a, param.width - 1) + pf_write(&c,1,0,param.colour));
+	return(pf_write(&c,1,0,param.colour) + repeat_write(a, param.width - 1));
 }
 
 int treat_f_string(t_param param, va_list arg)
 {
-	char *str;
+	char *str;//no free !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	int flag;
 	int length;
 	
@@ -77,10 +76,10 @@ int treat_f_string(t_param param, va_list arg)
 	param.precision > length && param.conversion != 'r' ? param.precision = length : 0;
 	flag = (param.conversion == 'r' ? -1 : 0);
 	if ((param.flags & FLAG_MINUS) == 0 && param.width > param.precision)
-		return(repeat_write(' ', param.width - param.precision) + pf_write(str,param.precision, flag));
+		return(repeat_write(' ', param.width - param.precision) + pf_write(str,param.precision, flag, param.colour));
 	if (param.width > param.precision)
-		return(pf_write(str,param.precision, flag) + repeat_write(' ', param.width - param.precision));
-	return (pf_write(str, param.precision, flag));
+		return(pf_write(str,param.precision, flag, param.colour) + repeat_write(' ', param.width - param.precision));
+	return (pf_write(str, param.precision, flag, param.colour));
 }
 
 int treat_f_percent(t_param param, va_list arg)
@@ -89,6 +88,6 @@ int treat_f_percent(t_param param, va_list arg)
 	
 	a = param.flags & FLAG_ZERO ? '0' : ' ';
 	if ((param.flags & FLAG_MINUS) == 0)
-		return(repeat_write(a, param.width - 1) + pf_write("%",1,0)); //  В оригинальном принтф получить сдвиг процента не получилось, но реализация все равное такая, т.к. вывод совпал с чуваком с гита + хер знает, зачем такую
-	return(pf_write("%",1,0) + repeat_write(a, param.width - 1));//парашу выводить, но мб кто-то додумался и до таких тестов
+		return(repeat_write(a, param.width - 1) + pf_write("%",1,0, param.colour)); //  В оригинальном принтф получить сдвиг процента не получилось, но реализация все равное такая, т.к. вывод совпал с чуваком с гита + хер знает, зачем такую
+	return(pf_write("%",1,0, param.colour) + repeat_write(a, param.width - 1));//парашу выводить, но мб кто-то додумался и до таких тестов
 }

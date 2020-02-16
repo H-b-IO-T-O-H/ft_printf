@@ -38,6 +38,7 @@ inline extern int			pf_is_precision(char c)
 	return (ft_strchr("$*.", c) != NULL);
 }
 
+
 inline int					pf_is_valid(char c)
 {
 	return (pf_is_conversion(c) || pf_is_modifier(c) || pf_is_flag(c) ||

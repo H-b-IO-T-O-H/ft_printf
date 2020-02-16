@@ -212,9 +212,9 @@ int treat_f_float(t_param param, va_list arg)
 	param.precision < 0 ? param.precision = 6 : 0;
 	param.mode == LL ? nb = va_arg(arg, long double) : (nb = va_arg(arg, double));
 	size = float_to_str(&str, nb, param);
-	if (str)
+	if (str)//округление выводит стандарт!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	{
-		write(1, str, size);
+		pf_write(str, size, 0, param.colour);
 		free(str);
 	}
 	return (size);
