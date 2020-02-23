@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "../includes/ft_printf.h"
 
-int len_base(char c, __intmax_t nb, int *base)
+int len_base(char c, uintmax_t nb, int *base)
 {
 	int len;
 	
@@ -59,7 +59,7 @@ void ft_itoa_2(t_for_itoa a)
 	free(a.str);
 }
 
-int ft_itoa(t_param param, __intmax_t nb, char sign_flag)
+int ft_itoa(t_param param, intmax_t nb, char sign_flag)
 {
 	t_for_itoa a;
 	
@@ -140,7 +140,7 @@ void ft_uitoa_2(t_for_itoa a, t_param param)
 }
 
 
-int ft_uitoa(t_param param, __uintmax_t nb)
+int ft_uitoa(t_param param, uintmax_t nb)
 {
 	t_for_itoa a;
 	

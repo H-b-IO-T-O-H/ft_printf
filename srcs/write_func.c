@@ -16,10 +16,10 @@ void pf_write_non_print(char *str, int len, int *countx3)
 			else if (str[i] < 33)
 				write(1, non_print[(int)(str[i])], 4);
 			else
-				{
-					--*countx3;
-					write(1, ".", 1);
-				}
+			{
+				--*countx3;
+				write(1, ".", 1);
+			}
 			++*countx3;
 		}
 		else
@@ -53,14 +53,17 @@ void colour_write(char *str, int len, t_colour colour)
 int			pf_write(char *str, int len, int flag, t_colour colour)
 {
 	int countx3;
-	
+
 	countx3 = 0;
 	if (!str)
 		return (0);
 	if (flag == -1)
 		pf_write_non_print(str,len, &countx3);
 	else if (colour == No)
+	{
+		//write(1,"\033[0m", 3); //не работает
 		write(1, str, len);
+	}
 	else
 		colour_write(str, len, colour);
 	flag == 1 ? free((void *)str) : 0;
@@ -71,7 +74,7 @@ int repeat_write(char c, int n)
 {
 	int i;
 	char str[n + 1];
-	
+
 	i = -1;
 	while (++i < n)
 		str[i] = c;
@@ -87,7 +90,7 @@ void ft_putchar(char c)
 int ft_strlen(const char *s)
 {
 	int i;
-	
+
 	i = 0;
 	if (s)
 		while (s[i] && i < INT_MAX)

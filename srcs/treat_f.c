@@ -2,7 +2,7 @@
 
 int treat_f_number_d(t_param param, va_list arg) {
 	char sign_flag;
-	__intmax_t n;
+	intmax_t n;
 	
 	sign_flag = 0;
 	if (param.mode == L)
@@ -10,7 +10,7 @@ int treat_f_number_d(t_param param, va_list arg) {
 	else if (param.mode == LL)
 		n = va_arg(arg, long long);
 	else if (param.mode == J)
-		n = va_arg(arg, __intmax_t);
+		n = va_arg(arg, intmax_t);
 	else if (param.mode == Z)
 		n = va_arg(arg, ssize_t); // уточнить не size_t случаем!!!!!!!!!!!!!!!!!!!
 	else
@@ -26,7 +26,7 @@ int treat_f_number_d(t_param param, va_list arg) {
 
 int treat_f_number(t_param param, va_list arg)
 {
-	__uintmax_t n;
+	uintmax_t n;
 	
 	if (param.conversion == 'd')
 		return(treat_f_number_d(param, arg));
@@ -35,7 +35,7 @@ int treat_f_number(t_param param, va_list arg)
 	else if (param.mode == LL)
 		n = va_arg(arg, unsigned long long);
 	else if (param.mode == J)
-		n = va_arg(arg, __uintmax_t);
+		n = va_arg(arg, uintmax_t);
 	else if (param.mode == Z)
 		n = va_arg(arg, ssize_t);
 	else
