@@ -1,11 +1,24 @@
-#ifndef PRINTF_NEW_FT_PRINTF_H
-#define PRINTF_NEW_FT_PRINTF_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bjuice <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/23 17:24:42 by bjuice            #+#    #+#             */
+/*   Updated: 2020/02/23 17:25:28 by bjuice           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <unistd.h>
-#include <limits.h>
+#ifndef PRINTF_NEW_FT_PRINTF_H
+# define PRINTF_NEW_FT_PRINTF_H
+
+# include <stdio.h>
+# include <stdlib.h>
+# include <stdarg.h>
+# include <unistd.h>
+# include <limits.h>
+# include <math.h>
 
 # define NONE 0
 # define FLAG_HASH 1
@@ -15,7 +28,7 @@
 # define FLAG_SPACE 16
 # define FLAG_APOSTROPHE 32
 
-typedef struct s_for_float
+typedef struct	s_for_float
 {
 	char **str;
 	char sign;
@@ -28,7 +41,7 @@ typedef struct s_for_float
 	int j;
 	int neg;
 	int flag;
-}              t_float;
+}							t_float;
 
 typedef struct	s_string
 {
@@ -43,24 +56,24 @@ typedef enum	e_modifier
 
 typedef enum	e_colour
 {
-	No = -1, WHITE = 0, GREEN = 1, BLUE = 2, RED = 3, PURPLE = 4, GREEY = 5, YELLOW = 6, AQUA = 7
+	WHITE = 0, GREEN = 1, BLUE = 2, RED = 3, PURPLE = 4,
+	GREY = 5, YELLOW = 6, AQUA = 7
 }				t_colour;
-
 
 typedef struct	s_param
 {
 	t_string	str;
 	t_modifier	mode;
 	t_colour	colour;
-	char 		conversion;
-	char 		flags;
+	char		conversion;
+	char		flags;
 	int			width;
-	int 		width_flag;
+	int			width_flag;
 	int			precision;
 	int			error;
-}				t_param;
+}						t_param;
 
-typedef struct	s_treat //
+typedef struct	s_treat
 {
 	char			conversion;
 	int				(*treat)(t_param, va_list);
@@ -93,10 +106,9 @@ int		pf_is_precision(char c);
 int		pf_is_valid(char c);
 int		pf_isdigit(int c);
 int		ft_itoa(t_param param, intmax_t nb, char sign);
-int     ft_uitoa(t_param param, uintmax_t nb);
+int		ft_uitoa(t_param param, uintmax_t nb);
 int		repeat_write(char c, int n);
 int		pf_write(char *str, int len, int flag, t_colour colour);
-void 	ft_putchar(char c);
 int		ft_strlen(const char *s);
 
 int treat_conversion(t_param *param, const char *str, int *i);

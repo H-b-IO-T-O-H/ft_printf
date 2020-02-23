@@ -86,7 +86,7 @@ int treat_f_percent(t_param param, va_list arg)
 {
 	char a;
 	
-	a = param.flags & FLAG_ZERO ? '0' : ' ';
+	a = param.flags & FLAG_ZERO && !(param.flags & FLAG_MINUS) ? '0' : ' ';
 	if ((param.flags & FLAG_MINUS) == 0)
 		return(repeat_write(a, param.width - 1) + pf_write("%",1,0, param.colour)); //  В оригинальном принтф получить сдвиг процента не получилось, но реализация все равное такая, т.к. вывод совпал с чуваком с гита + хер знает, зачем такую
 	return(pf_write("%",1,0, param.colour) + repeat_write(a, param.width - 1));//парашу выводить, но мб кто-то додумался и до таких тестов

@@ -112,12 +112,12 @@ int			treat_width(t_param *param, const char *str, int *i)//как обраба�
 
 int treat_colour(t_param *param, const char *str, int *i)
 {
-	param->colour = No;
+	param->colour = GREY;
 	if (str[*i] != '{')
 		return (0);
 	++*i;
 	if (str[*i] == 'G')
-		param->colour = (str[*i + 4] == 'N' ? GREEN : GREEY);
+		param->colour = (str[*i + 3] == 'E' ? GREEN : GREY);
 	str[*i] == 'B' ? param->colour = BLUE: 0;
 	str[*i] == 'Y' ? param->colour = YELLOW : 0;
 	str[*i] == 'A' ? param->colour = AQUA : 0;

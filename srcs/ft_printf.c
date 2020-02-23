@@ -53,6 +53,8 @@ int begin_conv(va_list arg, const char *str, int *i, int len)//выделяем 
 		}
 		++j;
 	}
+	if (param.conversion == 0)
+		return (-1);
 	param.conversion == 'i' ? param.conversion = 'd' : 0;
 	param.conversion == 'p' ? param.mode = LL : 0;
 	param.width != -2 && param.width_flag == 1 ? param.width_flag = 0 * va_arg(arg, int) : 0;
@@ -62,7 +64,6 @@ int begin_conv(va_list arg, const char *str, int *i, int len)//выделяем 
 		param.flags |= FLAG_MINUS;
 		param.width = -param.width;
 	}
-	//param.precision != -2 && param.prec_flag == 1 ? param.prec_flag = 0 * va_arg(arg, int) : 0;
 	param.precision == -2 ? param.precision = va_arg(arg, int) : 0;
 	param.precision < 0 && param.precision != -1 ? param.precision = -1 : 0;
 	return (transform_param_conv(param, arg));
@@ -98,7 +99,10 @@ int format_parser(const char *str, va_list arg)//разделяем выраже
 			while ((str[i] && pf_is_valid(str[i]) && !pf_is_conversion(str[i])) || (str[i] && str[i] != '%' && pf_is_conversion(str[i])) )
 				++i;
 			str[i] == '%' ? ++i : 0;
-			count += begin_conv(arg, str, &j, i - j);
+			k =  begin_conv(arg, str, &j, i - j);
+			if (k == -1)
+				break;
+			count += k;
 			i = j;
 		}
 		else

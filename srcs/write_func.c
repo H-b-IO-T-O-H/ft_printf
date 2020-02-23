@@ -44,7 +44,7 @@ void colour_write(char *str, int len, t_colour colour)
 	colour == BLUE ? write(1,"\033[034m", 6): 0;
 	colour == PURPLE ? write(1,"\033[035m", 6): 0;
 	colour == AQUA ? write(1,"\033[036m", 6): 0;
-	colour == GREEY? write(1,"\033[037m", 6): 0;
+	colour == GREY? write(1,"\033[037m", 6): 0;
 	write(1, str, len);
 }
 
@@ -59,7 +59,7 @@ int			pf_write(char *str, int len, int flag, t_colour colour)
 		return (0);
 	if (flag == -1)
 		pf_write_non_print(str,len, &countx3);
-	else if (colour == No)
+	else if (colour == GREY)
 	{
 		//write(1,"\033[0m", 3); //не работает
 		write(1, str, len);

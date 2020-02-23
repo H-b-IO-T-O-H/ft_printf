@@ -27,10 +27,7 @@ void handle_integer(long double *num, char **str, int *i, int multipl, int flag)
 	{
 		if (!flag)
 			*num *= 10;
-		//if (*i > 19)
-		//	(*str)[(*i)++] = '0';
-		//else
-			(*str)[(*i)++] = (char)((int)(*num) + '0');
+		(*str)[(*i)++] = (char)((int)(*num) + '0');
 		*num -= (int)*num;
 	}
 }
