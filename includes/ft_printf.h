@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <math.h>
+# include <stdint.h>
 
 # define NONE 0
 # define FLAG_HASH 1

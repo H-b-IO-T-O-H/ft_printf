@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/bjuice/rezerv/includes/ft_printf.h
+/home/vlad/gitfor/ft_printf/includes/ft_printf.h
 stdio.h
 -
 stdlib.h
@@ -19,52 +19,14 @@ limits.h
 -
 math.h
 -
+stdint.h
+-
 
-/Users/bjuice/rezerv/mmm.c
+/home/vlad/gitfor/ft_printf/mmm.c
 float.h
 -
 includes/ft_printf.h
-/Users/bjuice/rezerv/includes/ft_printf.h
+/home/vlad/gitfor/ft_printf/includes/ft_printf.h
 math.h
 -
-
-/Users/bjuice/rezerv/srcs/check.c
-../includes/ft_printf.h
-/Users/bjuice/rezerv/includes/ft_printf.h
-
-/Users/bjuice/rezerv/srcs/float.c
-../includes/ft_printf.h
-/Users/bjuice/rezerv/includes/ft_printf.h
-math.h
-/Users/bjuice/rezerv/srcs/math.h
-
-/Users/bjuice/rezerv/srcs/ft_itoa.c
-stdlib.h
--
-stdio.h
--
-../includes/ft_printf.h
-/Users/bjuice/rezerv/includes/ft_printf.h
-
-/Users/bjuice/rezerv/srcs/ft_printf.c
-../includes/ft_printf.h
-/Users/bjuice/rezerv/includes/ft_printf.h
-float.h
-/Users/bjuice/rezerv/srcs/float.h
-
-/Users/bjuice/rezerv/srcs/func.c
-../includes/ft_printf.h
-/Users/bjuice/rezerv/includes/ft_printf.h
-
-/Users/bjuice/rezerv/srcs/treat_f.c
-../includes/ft_printf.h
-/Users/bjuice/rezerv/includes/ft_printf.h
-
-/Users/bjuice/rezerv/srcs/treatment.c
-../includes/ft_printf.h
-/Users/bjuice/rezerv/includes/ft_printf.h
-
-/Users/bjuice/rezerv/srcs/write_func.c
-../includes/ft_printf.h
-/Users/bjuice/rezerv/includes/ft_printf.h
 

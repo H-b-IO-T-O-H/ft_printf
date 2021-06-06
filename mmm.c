@@ -9,7 +9,7 @@ int main()
 {
 	int l1,l2;
 	int i = -1;
-	while (++i < 100)
+	while (++i < 5)
 	{
 		ft_printf("asdfadsffdsfds%{RED}10d\n", 1000000);
 		ft_printf("asdfadsffdsfds%{GREEN}10d\n", 1000000);
